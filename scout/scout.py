@@ -145,6 +145,8 @@ def main():
     if not api_key:
         sys.exit("XAI_API_KEY not set")
     cfg = yaml.safe_load((ROOT / "scout" / "lanes.yaml").read_text())
+    if os.environ.get("XAI_MODEL"):
+        cfg["model"] = os.environ["XAI_MODEL"].strip()
     now_utc = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
     since = window_start(now_utc, cfg.get("max_window_hours", 24))
     log(f"window: {since.isoformat()} -> {now_utc.isoformat()}")

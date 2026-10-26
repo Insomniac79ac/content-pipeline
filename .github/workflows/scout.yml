@@ -5,6 +5,11 @@ on:
     # 5:47am, 11:47am, 7:47pm MYT (UTC+8). Off the hour because GitHub delays top-of-hour runs.
     - cron: "47 21,3,11 * * *"
   workflow_dispatch:
+    inputs:
+      model:
+        description: "override model (blank = lanes.yaml)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -29,6 +34,7 @@ jobs:
       - name: run scout
         env:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_MODEL: ${{ inputs.model }}
         run: python scout/scout.py
 
       - name: commit brief
