@@ -1,8 +1,15 @@
-"""Grok scout: searches X per lane via xAI x_search, adds DefiLlama and price data,
-writes a narrative brief to briefs/. Runs in GitHub Actions; needs XAI_API_KEY."""
+"""Grok scout, two modes. Runs in GitHub Actions; needs XAI_API_KEY.
+
+detect:   cheap scan. open X search every run; handle lanes once a day (morning run).
+          adds prices + DefiLlama movers. writes briefs/YYYY-MM-DD-HHMM.md
+research: deep dive on the stories the drafter picked (STORIES env, JSON list).
+          one targeted X search per story + DefiLlama protocol data if a slug is given.
+          writes research/YYYY-MM-DD-HHMM.md
+"""
 
 import csv
 import datetime as dt
+import json
 import os
 import re
 import sys
@@ -15,41 +22,67 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 BRIEFS = ROOT / "briefs"
+RESEARCH = ROOT / "research"
+COSTS = BRIEFS / "costs.csv"
 MYT = ZoneInfo("Asia/Kuala_Lumpur")
 XAI_URL = "https://api.x.ai/v1/responses"
 TICKS_PER_USD = 10_000_000_000
 
-LANE_PROMPT = """you are a research scout for a crypto writer. search X for what the accounts in scope posted since {since} (UTC).
+ITEM_FORMAT = """### <short title>
+- importance: <high / medium / low>
+- what happened: <facts, numbers, names; no speculation beyond the posts>
+- why it matters: <who it affects, where the opportunity or risk is>
+- signal: <how much discussion, who is talking about it>
+- key post: <url> | @<author> (~<followers> followers) | posted <YYYY-MM-DD HH:MM> UTC | <likes>/<reposts>/<replies>
+- other posts: <urls>"""
+
+DETECT_PROMPT = """you are a research scout for a crypto writer. search X for posts since {since} (UTC).
 
 lane: {name}
 focus: {focus}
 
-always report the top 5 developments you found, most important first, even if they seem modest. a writer will decide what's worth covering, so your job is to surface, not to filter. a single post with a real take, data point, announcement, or warning counts. only include things posted after {since}. use exactly this format:
+always report the top {n} developments you found, most important first, even if modest. the writer decides what's worth covering; your job is to surface, not filter. a single post with a real take, data point, announcement, or warning counts. only include things posted after {since}.
 
-### <short title>
-- importance: <high / medium / low>
-- what happened: <facts, numbers, names; no speculation beyond the posts>
-- why it matters: <who it affects, where the opportunity or risk is>
-- signal: <how much discussion / engagement, who is talking about it>
-- posts: <links to the key X posts>
+credibility: prefer official project accounts, known researchers, and posts with real engagement. ignore low-follower accounts with little engagement, memecoin shilling, giveaways, and engagement farming.
 
-reply "nothing found" only if the search returned zero relevant posts in the window.
-skip memecoin shilling, giveaways, and engagement farming."""
+be concise. use exactly this format per item:
+
+{fmt}
+
+reply "nothing found" only if the search returned zero relevant posts in the window."""
+
+RESEARCH_PROMPT = """you are a research assistant for a crypto writer who is about to post about this story.
+
+story: {title}
+what we know: {summary}
+original post: {url}
+
+search X (use at most 3 searches) and report, with links for every claim:
+1. the original claim or announcement in full detail: numbers, dates, mechanism
+2. primary sources: official accounts, docs, blogs, post-mortems
+3. reactions from credible accounts: support and pushback
+4. the counter-narrative or overlooked angle: what most people are missing or getting wrong
+5. open questions and anything unverified
+
+be concise. bullets only. no speculation beyond the sources."""
 
 
 def log(msg):
     print(msg, flush=True)
 
 
-def window_start(now_utc, max_hours):
-    """Start from the previous brief's timestamp so delayed runs don't leave gaps."""
-    floor = now_utc - dt.timedelta(hours=max_hours)
-    prev = sorted(BRIEFS.glob("20*.md"))
-    if prev:
-        m = re.search(r"^generated_at: (\S+)$", prev[-1].read_text(), re.M)
-        if m:
-            return max(dt.datetime.fromisoformat(m.group(1)), floor)
-    return max(now_utc - dt.timedelta(hours=12), floor)
+def stamp(now_utc):
+    return f"{now_utc.astimezone(MYT):%Y-%m-%d-%H%M}"
+
+
+def log_cost(now_utc, kind, cost, calls, ok):
+    new = not COSTS.exists()
+    COSTS.parent.mkdir(exist_ok=True)
+    with COSTS.open("a", newline="") as f:
+        w = csv.writer(f)
+        if new:
+            w.writerow(["generated_at_utc", "kind", "cost_usd", "x_search_calls", "ok"])
+        w.writerow([now_utc.isoformat(), kind, f"{cost:.4f}", calls, ok])
 
 
 def extract_text_and_links(data):
@@ -68,22 +101,9 @@ def extract_text_and_links(data):
     return text.strip(), sorted(l for l in links if isinstance(l, str))
 
 
-def run_lane(lane, model, since, now_utc, api_key):
-    tool = {
-        "type": "x_search",
-        "from_date": since.strftime("%Y-%m-%d"),
-        # to_date is exclusive in practice (a same-day to_date cut off today's posts), so use tomorrow
-        "to_date": (now_utc + dt.timedelta(days=1)).strftime("%Y-%m-%d"),
-    }
-    if lane.get("handles"):
-        tool["allowed_x_handles"] = lane["handles"][:10]
-    body = {
-        "model": model,
-        "input": [{"role": "user", "content": LANE_PROMPT.format(
-            since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"], focus=lane["focus"])}],
-        "tools": [tool],
-    }
-    last_err = None
+def xai(model, prompt, tool, api_key, label):
+    body = {"model": model, "input": [{"role": "user", "content": prompt}], "tools": [tool]}
+    err = None
     for attempt in (1, 2):
         try:
             r = requests.post(XAI_URL, json=body, timeout=240,
@@ -95,12 +115,31 @@ def run_lane(lane, model, since, now_utc, api_key):
             usage = data.get("usage") or {}
             cost = (usage.get("cost_in_usd_ticks") or 0) / TICKS_PER_USD
             calls = usage.get("num_server_side_tools_used") or 0
-            log(f"[ok] {lane['name']}: ${cost:.4f}, {calls} tool calls")
-            return {"lane": lane, "text": text, "links": links, "cost": cost, "calls": calls, "error": None}
+            log(f"[ok] {label}: ${cost:.4f}, {calls} tool calls")
+            return {"text": text, "links": links, "cost": cost, "calls": calls, "error": None}
         except Exception as e:  # noqa: BLE001
-            last_err = str(e)
-            log(f"[retry {attempt}] {lane['name']}: {last_err}")
-    return {"lane": lane, "text": "", "links": [], "cost": 0.0, "calls": 0, "error": last_err}
+            err = str(e)
+            log(f"[retry {attempt}] {label}: {err}")
+    return {"text": "", "links": [], "cost": 0.0, "calls": 0, "error": err}
+
+
+def x_tool(since, now_utc, handles=None):
+    # to_date behaves as exclusive (a same-day to_date drops today's posts), so use tomorrow
+    tool = {"type": "x_search", "from_date": since.strftime("%Y-%m-%d"),
+            "to_date": (now_utc + dt.timedelta(days=1)).strftime("%Y-%m-%d")}
+    if handles:
+        tool["allowed_x_handles"] = handles[:10]
+    return tool
+
+
+# ---------- detect ----------
+
+def last_brief_time():
+    for p in sorted(BRIEFS.glob("20*.md"), reverse=True):
+        m = re.search(r"^generated_at: (\S+)$", p.read_text(), re.M)
+        if m:
+            return dt.datetime.fromisoformat(m.group(1))
+    return None
 
 
 def market_data():
@@ -115,7 +154,6 @@ def market_data():
             lines.append(f"- {sym}: ${d.get('usd', 0):,.2f} ({d.get('usd_24h_change', 0):+.2f}% 24h)")
     except Exception as e:  # noqa: BLE001
         lines.append(f"- prices unavailable: {e}")
-
     try:
         r = requests.get("https://api.llama.fi/protocols", timeout=60)
         r.raise_for_status()
@@ -124,20 +162,120 @@ def market_data():
         def row(p):
             c7 = p.get("change_7d")
             c7s = f", {c7:+.1f}% 7d" if c7 is not None else ""
-            return (f"- {p['name']} ({p.get('category', '?')}): ${p['tvl'] / 1e6:,.0f}M TVL, "
-                    f"{p['change_1d']:+.1f}% 1d{c7s}")
+            return (f"- {p['name']} [slug: {p.get('slug')}] ({p.get('category', '?')}): "
+                    f"${p['tvl'] / 1e6:,.0f}M TVL, {p['change_1d']:+.1f}% 1d{c7s}")
 
         up = sorted(protos, key=lambda p: p["change_1d"], reverse=True)[:8]
         down = sorted(protos, key=lambda p: p["change_1d"])[:8]
         opt = sorted([p for p in protos if (p.get("category") or "").lower() in
-                      ("options", "options vault", "derivatives")],
-                     key=lambda p: p["tvl"], reverse=True)[:10]
+                      ("options", "options vault", "derivatives")], key=lambda p: p["tvl"], reverse=True)[:10]
         lines += ["", "**biggest TVL gainers (1d, TVL >= $20M)**"] + [row(p) for p in up]
         lines += ["", "**biggest TVL drops (1d, TVL >= $20M)**"] + [row(p) for p in down]
         lines += ["", "**options / derivatives protocols by TVL**"] + [row(p) for p in opt]
     except Exception as e:  # noqa: BLE001
         lines.append(f"- DefiLlama unavailable: {e}")
     return lines
+
+
+def detect(cfg, api_key, now_utc):
+    lanes_mode = (os.environ.get("LANES") or "").strip()
+    if lanes_mode not in ("all", "open"):
+        lanes_mode = "all" if now_utc.astimezone(MYT).hour < cfg.get("handle_lanes_before_hour_myt", 10) else "open"
+    lanes = [l for l in cfg["lanes"] if lanes_mode == "all" or not l.get("handles")]
+
+    prev = last_brief_time()
+    open_since = max(prev or now_utc - dt.timedelta(hours=12), now_utc - dt.timedelta(hours=cfg["max_window_hours"]))
+    handle_since = now_utc - dt.timedelta(hours=24)
+
+    def run(lane):
+        since = handle_since if lane.get("handles") else open_since
+        prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
+                                      focus=lane["focus"], n=lane.get("items", 5), fmt=ITEM_FORMAT)
+        res = xai(cfg["model"], prompt, x_tool(since, now_utc, lane.get("handles")), api_key, lane["name"])
+        return lane, since, res
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        results = list(pool.map(run, lanes))
+
+    ok = [r for r in results if not r[2]["error"]]
+    cost = sum(r[2]["cost"] for r in results)
+    calls = sum(r[2]["calls"] for r in results)
+    log_cost(now_utc, f"detect-{lanes_mode}", cost, calls, f"{len(ok)}/{len(results)}")
+    if not ok:
+        print(f"::error::all lanes failed: {results[0][2]['error']}", flush=True)
+        sys.exit(1)
+
+    now_myt = now_utc.astimezone(MYT)
+    out = ["---", f"generated_at: {now_utc.isoformat()}", f"lanes: {lanes_mode}",
+           f"model: {cfg['model']}", f"cost_usd: {cost:.4f}", f"x_search_calls: {calls}",
+           f"lanes_ok: {len(ok)}/{len(results)}", "---", "",
+           f"# brief {now_myt:%Y-%m-%d %H:%M} MYT ({lanes_mode} lanes)", "",
+           "## market data", *market_data(), ""]
+    for lane, since, res in results:
+        out.append(f"## lane: {lane['name']} (since {since.astimezone(MYT):%m-%d %H:%M} MYT)")
+        out.append(f"_lane failed: {res['error']}_" if res["error"] else (res["text"] or "nothing found"))
+        out.append("")
+    path = BRIEFS / f"{stamp(now_utc)}.md"
+    path.write_text("\n".join(out))
+    log(f"wrote {path.relative_to(ROOT)}; ${cost:.4f}")
+
+
+# ---------- research ----------
+
+def defillama_protocol(slug):
+    try:
+        r = requests.get(f"https://api.llama.fi/protocol/{slug}", timeout=60)
+        r.raise_for_status()
+        d = r.json()
+        tvl = d.get("tvl") or []
+        pts = {dt.datetime.fromtimestamp(p["date"], dt.timezone.utc).date(): p["totalLiquidityUSD"] for p in tvl[-31:]}
+        days = sorted(pts)
+        lines = [f"- DefiLlama {d.get('name')} ({d.get('category')}), chains: {', '.join(d.get('chains', [])[:6])}"]
+        if days:
+            last = pts[days[-1]]
+            for back in (1, 7, 30):
+                if len(days) > back:
+                    prev = pts[days[-1 - back]]
+                    if prev:
+                        lines.append(f"  - TVL ${last / 1e6:,.1f}M, {(last / prev - 1) * 100:+.1f}% vs {back}d ago")
+        return lines
+    except Exception as e:  # noqa: BLE001
+        return [f"- DefiLlama {slug}: unavailable ({e})"]
+
+
+def research(cfg, api_key, now_utc):
+    stories = json.loads(os.environ.get("STORIES") or "[]")
+    if not stories:
+        sys.exit("STORIES is empty")
+    since = now_utc - dt.timedelta(days=7)
+
+    def run(s):
+        res = {"text": "", "links": [], "cost": 0.0, "calls": 0, "error": None}
+        if cfg.get("research_x", True):
+            prompt = RESEARCH_PROMPT.format(title=s.get("title", ""), summary=s.get("summary", ""),
+                                            url=s.get("url", "n/a"))
+            res = xai(cfg["model"], prompt, x_tool(since, now_utc), api_key, f"research: {s.get('title')}")
+        llama = defillama_protocol(s["defillama_slug"]) if s.get("defillama_slug") else []
+        return s, res, llama
+
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        results = list(pool.map(run, stories[:5]))
+
+    cost = sum(r[1]["cost"] for r in results)
+    calls = sum(r[1]["calls"] for r in results)
+    ok = sum(1 for r in results if not r[1]["error"])
+    log_cost(now_utc, "research", cost, calls, f"{ok}/{len(results)}")
+
+    out = ["---", f"generated_at: {now_utc.isoformat()}", f"cost_usd: {cost:.4f}", "---", ""]
+    for s, res, llama in results:
+        out.append(f"## {s.get('id', '')} {s.get('title', '')}".strip())
+        out += llama
+        out.append(f"_x research failed: {res['error']}_" if res["error"] else res["text"])
+        out.append("")
+    RESEARCH.mkdir(exist_ok=True)
+    path = RESEARCH / f"{stamp(now_utc)}.md"
+    path.write_text("\n".join(out))
+    log(f"wrote {path.relative_to(ROOT)}; ${cost:.4f}")
 
 
 def main():
@@ -148,61 +286,11 @@ def main():
     if os.environ.get("XAI_MODEL"):
         cfg["model"] = os.environ["XAI_MODEL"].strip()
     now_utc = dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
-    since = window_start(now_utc, cfg.get("max_window_hours", 24))
-    log(f"window: {since.isoformat()} -> {now_utc.isoformat()}")
-
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        results = list(pool.map(
-            lambda lane: run_lane(lane, cfg["model"], since, now_utc, api_key), cfg["lanes"]))
-
-    ok = [r for r in results if not r["error"]]
-    if not ok:
-        # no brief written, so the next run's window still starts at the last good brief
-        print(f"::error::all lanes failed: {results[0]['error']}", flush=True)
-        sys.exit(1)
-    total_cost = sum(r["cost"] for r in results)
-    total_calls = sum(r["calls"] for r in results)
-    now_myt = now_utc.astimezone(MYT)
-
-    out = [
-        "---",
-        f"generated_at: {now_utc.isoformat()}",
-        f"window_start: {since.isoformat()}",
-        f"model: {cfg['model']}",
-        f"cost_usd: {total_cost:.4f}",
-        f"x_search_calls: {total_calls}",
-        f"lanes_ok: {len(ok)}/{len(results)}",
-        "---",
-        "",
-        f"# brief {now_myt:%Y-%m-%d %H:%M} MYT",
-        f"covers {since.astimezone(MYT):%Y-%m-%d %H:%M} to {now_myt:%H:%M} MYT",
-        "",
-        "## market data",
-        *market_data(),
-        "",
-    ]
-    for r in results:
-        out.append(f"## lane: {r['lane']['name']}")
-        if r["error"]:
-            out.append(f"_lane failed: {r['error']}_")
-        else:
-            out.append(r["text"] or "nothing notable")
-            if r["links"]:
-                out += ["", "sources:"] + [f"- {l}" for l in r["links"]]
-        out.append("")
-
-    BRIEFS.mkdir(exist_ok=True)
-    path = BRIEFS / f"{now_myt:%Y-%m-%d-%H%M}.md"
-    path.write_text("\n".join(out))
-    log(f"wrote {path.relative_to(ROOT)}; total ${total_cost:.4f}, {total_calls} tool calls")
-
-    costs = BRIEFS / "costs.csv"
-    new = not costs.exists()
-    with costs.open("a", newline="") as f:
-        w = csv.writer(f)
-        if new:
-            w.writerow(["generated_at_utc", "cost_usd", "x_search_calls", "lanes_ok"])
-        w.writerow([now_utc.isoformat(), f"{total_cost:.4f}", total_calls, f"{len(ok)}/{len(results)}"])
+    mode = (os.environ.get("MODE") or "detect").strip()
+    if mode == "research":
+        research(cfg, api_key, now_utc)
+    else:
+        detect(cfg, api_key, now_utc)
 
 
 if __name__ == "__main__":

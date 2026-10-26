@@ -28,6 +28,20 @@ Single source of truth for drafts on this account. Edit here; the drafter reads 
 - security alerts: imperative, step by step, no preamble
 - never: crypto-twitter slang, hype, engagement bait, hedging, press-release tone, financial advice framing, slurs
 
+## Post structure
+```
+L1: who's affected + a concrete fact or number           (must work before "show more")
+L2: the non-obvious part: why this isn't what it looks like
+body: 2 to 4 short facts or bullets, with numbers
+take: one committed opinion
+close: what you'd watch or do
+---
+self-reply: source link(s) + one extra detail worth knowing
+```
+- the main post never contains a link (link posts lose reach). sources always go in the self-reply
+- if the story starts from one specific X post, make the main post a quote post of it
+- suggest one visual (chart, screenshot) in the scratchpad when it would help; the human attaches it
+
 ## Opener (most important line)
 - first person to the reader, stakes up front: what changed and who it affects
 - e.g. "ok so if you're holding X, ...", "this matters if you ..."
@@ -37,16 +51,52 @@ Single source of truth for drafts on this account. Edit here; the drafter reads 
 - dense, sourced, plain English
 - historical context where it helps the reader judge the situation
 
-## Close (second most important)
-- your own take on where the opportunity or risk sits, first person
-- the mechanism behind it, and what you'd watch or check next
+## Take and close (second most important)
+- commit to a position. "i think this floor breaks if the sweeps stop", not "worth keeping an eye on"
+- the mechanism behind it, and what you'd watch or do next
 - e.g. "here's what i'd watch", "this is why i'm paying attention"
-- no engagement-bait CTA ("thoughts?", "follow for more", "like and rt")
+
+## What earns comments (no bait)
+- never ask for engagement: no "thoughts?", "comment below", "agree?", "follow for more", "like and rt", no rhetorical questions aimed at replies
+- the content itself has to make people want to reply, by doing at least one of:
+  - challenging the narrative or a preconceived notion, with evidence
+  - bringing concrete data most people haven't seen
+  - giving a deeper insight: the mechanism, the second-order effect, the historical parallel
+- a draft that only restates the news fails this test. find the angle or skip the story
 
 ## Money angle
 - every draft answers: why does this matter to someone looking for opportunities, and why should the reader care
 - explain where the edge is and why it exists
 - never a buy/sell call, never a price target
+
+## Series (recurring formats; tag them in Typefully)
+**security alert** (tag `security-alert`): when users may need to act
+```
+L1: who's at risk, plainly ("if you bought X since March, ...")
+what happened, in 1 to 2 lines
+what to do: numbered or bulleted steps, imperative
+what not to do (if relevant)
+close: the risk most people will miss
+self-reply: sources + who to contact
+```
+**one piece tcg market note** (tag `op-tcg`): ad hoc on real moves, plus a weekly roundup on the Sunday morning run
+```
+L1: what moved + by how much (card, set, sealed)
+why: reprint, tournament result, set release, supply
+take: is it a trend or noise, and why
+close: what i'd watch next (release dates, reprint risk, tournament meta)
+```
+
+## Replies to bigger accounts (tag `reply`)
+- target: a post under 6 hours old (fresher is better) from an account bigger than yours or an official project account, inside your topics
+- the reply must add something the original missed: a data point, missing context, a counter-view, or a correction. never agreement-only ("great point", "this")
+- 1 to 3 short sentences. same casing and voice rules
+- no links, no self-promo, no tagging extra accounts
+- disagree on the substance, never dunk on the person
+- never reply to scams, giveaways, or memecoin shills
+- at most one reply per account per day
+- only with verified facts
+- the draft title shows how old the target post is, so the reviewer knows the urgency
 
 ## Voice samples (real posts)
 

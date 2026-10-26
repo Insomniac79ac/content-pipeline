@@ -3,7 +3,9 @@
 # Lane grouping only batches searches; nothing is filtered out.
 
 model: grok-4.3
-max_window_hours: 24   # cap on how far back a run looks
+max_window_hours: 24              # cap on how far back an open search looks
+handle_lanes_before_hour_myt: 10  # handle lanes run only on the morning run (last 24h)
+research_x: true                  # false = skip the Grok deep dive, DefiLlama data only
 
 lanes:
   - name: defi / options
@@ -34,10 +36,21 @@ lanes:
     focus: NFT communities, drama, floor moves, ecosystem shutdowns or launches
     handles: [pudgypenguins, FoxyPenguinApe, HouseofChimera, manyaaww, ahboyash, mteamisloading, NPC_68]
 
-  # open search: no handle filter, Grok searches all of X
-  - name: open x search
+  # open searches: no handle filter, Grok searches all of X. these run every time.
+  - name: open / defi + options + infra
     focus: >-
-      the most discussed new developments on all of X in onchain options, DeFi infrastructure,
-      exploits and security incidents, macro moves hitting crypto, BTC/ETH/SOL, One Piece TCG.
-      prefer posts with real engagement or from credible accounts. ignore memecoin shilling
+      most discussed new developments in onchain options, DeFi protocols and infrastructure, yields,
+      incentives, launches, governance fights. prefer posts with real engagement or from credible accounts
+    handles: []
+
+  - name: open / security
+    focus: >-
+      exploits, hacks, drainers, compromised products or wallets, scams spreading, incident responses,
+      post-mortems. prioritise anything where users may need to act
+    handles: []
+
+  - name: open / macro + majors + one piece tcg
+    focus: >-
+      macro moves hitting crypto, BTC/ETH/SOL positioning and flows, regulation, plus One Piece TCG
+      set releases, reprints, price moves and market sentiment
     handles: []

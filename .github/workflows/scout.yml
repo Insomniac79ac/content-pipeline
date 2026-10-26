@@ -1,11 +1,22 @@
 name: scout
 
+# no schedule: the drafter scheduled task dispatches this and waits for it,
+# so GitHub's cron delays don't matter.
 on:
-  schedule:
-    # 5:47am, 11:47am, 7:47pm MYT (UTC+8). Off the hour because GitHub delays top-of-hour runs.
-    - cron: "47 21,3,11 * * *"
   workflow_dispatch:
     inputs:
+      mode:
+        description: "detect (scan) or research (deep dive on picked stories)"
+        required: false
+        default: "detect"
+      lanes:
+        description: "detect only: all | open (blank = all before 10am MYT, else open)"
+        required: false
+        default: ""
+      stories:
+        description: "research only: JSON list of {id, title, summary, url, defillama_slug}"
+        required: false
+        default: ""
       model:
         description: "override model (blank = lanes.yaml)"
         required: false
@@ -34,16 +45,19 @@ jobs:
       - name: run scout
         env:
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          MODE: ${{ inputs.mode }}
+          LANES: ${{ inputs.lanes }}
+          STORIES: ${{ inputs.stories }}
           XAI_MODEL: ${{ inputs.model }}
         run: python scout/scout.py
 
-      - name: commit brief
+      - name: commit output
         if: always()
         run: |
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
-          mkdir -p briefs && git add briefs/
+          mkdir -p briefs research && git add briefs/ research/
           git diff --cached --quiet && exit 0
-          git commit -m "brief $(TZ=Asia/Kuala_Lumpur date +'%Y-%m-%d %H:%M') MYT"
-          git pull --rebase
-          git push
+          git commit -m "${{ inputs.mode || 'detect' }} $(TZ=Asia/Kuala_Lumpur date +'%Y-%m-%d %H:%M') MYT"
+          for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
+          exit 1
