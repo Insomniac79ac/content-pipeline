@@ -24,15 +24,16 @@ LANE_PROMPT = """you are a research scout for a crypto writer. search X for what
 lane: {name}
 focus: {focus}
 
-report up to 5 notable developments, most important first. only include things posted after {since}. use exactly this format:
+always report the top 5 developments you found, most important first, even if they seem modest. a writer will decide what's worth covering, so your job is to surface, not to filter. a single post with a real take, data point, announcement, or warning counts. only include things posted after {since}. use exactly this format:
 
 ### <short title>
+- importance: <high / medium / low>
 - what happened: <facts, numbers, names; no speculation beyond the posts>
 - why it matters: <who it affects, where the opportunity or risk is>
 - signal: <how much discussion / engagement, who is talking about it>
 - posts: <links to the key X posts>
 
-if nothing notable happened, reply with exactly: nothing notable
+reply "nothing found" only if the search returned zero relevant posts in the window.
 skip memecoin shilling, giveaways, and engagement farming."""
 
 
