@@ -154,7 +154,8 @@ def main():
     ok = [r for r in results if not r["error"]]
     if not ok:
         # no brief written, so the next run's window still starts at the last good brief
-        sys.exit("all lanes failed: " + (results[0]["error"] or "unknown"))
+        print(f"::error::all lanes failed: {results[0]['error']}", flush=True)
+        sys.exit(1)
     total_cost = sum(r["cost"] for r in results)
     total_calls = sum(r["calls"] for r in results)
     now_myt = now_utc.astimezone(MYT)

@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
-          git add briefs/
+          mkdir -p briefs && git add briefs/
           git diff --cached --quiet && exit 0
           git commit -m "brief $(TZ=Asia/Kuala_Lumpur date +'%Y-%m-%d %H:%M') MYT"
           git pull --rebase
