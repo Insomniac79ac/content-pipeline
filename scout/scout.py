@@ -72,7 +72,8 @@ def run_lane(lane, model, since, now_utc, api_key):
     tool = {
         "type": "x_search",
         "from_date": since.strftime("%Y-%m-%d"),
-        "to_date": now_utc.strftime("%Y-%m-%d"),
+        # to_date is exclusive in practice (a same-day to_date cut off today's posts), so use tomorrow
+        "to_date": (now_utc + dt.timedelta(days=1)).strftime("%Y-%m-%d"),
     }
     if lane.get("handles"):
         tool["allowed_x_handles"] = lane["handles"][:10]
