@@ -139,7 +139,7 @@ def market_data():
 
 
 def main():
-    api_key = os.environ.get("XAI_API_KEY")
+    api_key = (os.environ.get("XAI_API_KEY") or "").strip().strip("'\"").strip()
     if not api_key:
         sys.exit("XAI_API_KEY not set")
     cfg = yaml.safe_load((ROOT / "scout" / "lanes.yaml").read_text())
@@ -152,6 +152,9 @@ def main():
             lambda lane: run_lane(lane, cfg["model"], since, now_utc, api_key), cfg["lanes"]))
 
     ok = [r for r in results if not r["error"]]
+    if not ok:
+        # no brief written, so the next run's window still starts at the last good brief
+        sys.exit("all lanes failed: " + (results[0]["error"] or "unknown"))
     total_cost = sum(r["cost"] for r in results)
     total_calls = sum(r["calls"] for r in results)
     now_myt = now_utc.astimezone(MYT)
@@ -195,9 +198,6 @@ def main():
         if new:
             w.writerow(["generated_at_utc", "cost_usd", "x_search_calls", "lanes_ok"])
         w.writerow([now_utc.isoformat(), f"{total_cost:.4f}", total_calls, f"{len(ok)}/{len(results)}"])
-
-    if not ok:
-        sys.exit("all lanes failed")
 
 
 if __name__ == "__main__":
