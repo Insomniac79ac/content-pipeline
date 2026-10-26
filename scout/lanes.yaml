@@ -1,0 +1,43 @@
+# Grok scout config. One x_search call per lane per run.
+# allowed_x_handles is capped at 10 per lane by the xAI API.
+# Lane grouping only batches searches; nothing is filtered out.
+
+model: grok-4.3
+max_window_hours: 24   # cap on how far back a run looks
+
+lanes:
+  - name: defi / options
+    focus: onchain options, derivatives, DeFi protocol launches, yields, incentives, governance
+    handles: [DeriveXYZ, ryskfinance, Defi_Dad, thedefivillain, Deebs_DeFi, casperdefi, poopmandefi, castle_labs, PinkBrains_io, 0xaporia]
+
+  - name: defi / research
+    focus: DeFi infrastructure, onchain data, protocol research, cross-chain, ethereum ecosystem
+    handles: [0xSammy, Layerzero_Core, 100y_eth, hildobby, c4lvin, ByzGeneral, 0x_ultra, shivst3r, blockgraze, CryptMoose_]
+
+  - name: markets
+    focus: BTC, ETH, SOL price action and positioning, market structure, rotations
+    handles: [CryptoKaleo, AltcoinSherpa, ThinkingUSD, krugman87, AlgodTrading, 0xDonPepe, ManInBlackie, WazzCrypto, Grantblocmates, chilla_ct]
+
+  - name: security
+    focus: exploits, hacks, drainers, compromised products, scams, incident response
+    handles: [SEAL_911, zerokn0wledge, dethective, SpecterAnalyst, TheHackerNews, The_Cyber_News, DarkWebInformer, osintnewsletter, MagicalTux, WhiteWhaleLabs]
+
+  - name: macro / general
+    focus: macro, geopolitics affecting markets, rates, regulation, big-picture crypto narratives
+    handles: [sentdefender, ImperiumPaper, AndrewAsksHow, MikeSilagadze, KingBootoshi, 0xQuit, 0xasrequired, 0xPhoenix77, RuneCrypto_, bandosei]
+
+  - name: one piece tcg
+    focus: One Piece TCG set releases, reprints, card prices, sealed product, market sentiment
+    handles: [ONEPIECE_tcg, OPcom_info, Eiichiro_Staff, official_BCG_JP, OPMerchandise, AndyCollectz, yutokanzakireal, redhairshanks86, Usoppu, tanuki42_]
+
+  - name: nft / community
+    focus: NFT communities, drama, floor moves, ecosystem shutdowns or launches
+    handles: [pudgypenguins, FoxyPenguinApe, HouseofChimera, manyaaww, ahboyash, mteamisloading, NPC_68]
+
+  # open search: no handle filter, Grok searches all of X
+  - name: open x search
+    focus: >-
+      the most discussed new developments on all of X in onchain options, DeFi infrastructure,
+      exploits and security incidents, macro moves hitting crypto, BTC/ETH/SOL, One Piece TCG.
+      prefer posts with real engagement or from credible accounts. ignore memecoin shilling
+    handles: []
