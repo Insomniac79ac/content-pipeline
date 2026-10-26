@@ -6,3 +6,4 @@ generated_at_utc,kind,cost_usd,x_search_calls,ok
 2026-10-26T12:32:19+00:00,detect-all,0.4449,21,8/8
 2026-10-26T14:08:36+00:00,detect-open,0.2673,9,3/3
 2026-10-26T14:09:56+00:00,research,0.1174,6,2/2
+2026-10-26T14:37:22+00:00,detect-open,0.3756,10,3/3
