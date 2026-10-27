@@ -387,6 +387,7 @@ def history(cfg, api_key, now_utc):
     # optional params via the `stories` input: {"windows": [["2023-01-01","2023-12-31"]], "topic": "...", "name": "..."}
     params = json.loads(os.environ.get("STORIES") or "{}") if (os.environ.get("STORIES") or "").strip().startswith("{") else {}
     topic = params.get("topic", "")
+    handle = params.get("handle", handle).lstrip("@")
     windows = []
     if params.get("windows"):
         for a, b in params["windows"]:
