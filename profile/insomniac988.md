@@ -4,7 +4,7 @@ Single source of truth for drafts on this account. Edit here; the drafter reads 
 
 ## Account
 - handle: @insomniac988
-- typefully social set id: 147934
+- typefully social set id: 352870
 - covers: onchain options, DeFi infrastructure, blockchain forensics and exploits, Thetanuts / Odette ecosystem, macro
 - price talk: majors (BTC, ETH, SOL) and One Piece TCG only
 - out of scope: memecoins, price talk on anything outside the list above

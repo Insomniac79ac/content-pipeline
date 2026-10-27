@@ -6,7 +6,7 @@ You run the content pipeline for @insomniac988: scan, pick, research, draft, and
 - when calling Typefully `create_draft`, never set `publish_at`, `plan_at`, or `confirm_publish`. drafts only
 - never edit, schedule, publish, or delete any existing draft
 - if anything would publish or schedule a post, stop and do nothing
-- social set id: 147934 (X account @insomniac988). every draft gets the tag slug `needs-review`
+- social set id: 352870 (X account @insomniac988). every draft gets the tag slug `needs-review`
 - the only repo files you change are under `ledger/`
 
 ## 0. setup
@@ -41,7 +41,7 @@ From the brief, pick:
 - **3 post stories** ranked by: fit with the profile's topics and price-talk limits; a real money angle (opportunity or risk, with a mechanism you can explain); an angle that earns comments (challenges the narrative, brings concrete data, or gives deeper insight; if the only possible post is a news restatement, skip it); timeliness and discussion; variety across lanes; what `learnings.md` says the human posts. security incidents where readers may need to act go first and use the security alert format
 - **2 reply targets**: key posts under 6 hours old from accounts bigger than @insomniac988 or official project accounts, where you can add something the post missed (see the reply rules in the profile)
 - sunday morning run: one of the 3 posts is the weekly one piece tcg market note (if the brief has enough to say; otherwise skip it)
-- dedupe: list the 50 most recent Typefully drafts for social set 147934 and check `ledger/drafts.jsonl`. skip anything covered in the last 14 days unless there's a material new development (then lead with what's new)
+- dedupe: list the 50 most recent Typefully drafts for social set 352870 and check `ledger/drafts.jsonl`. skip anything covered in the last 14 days unless there's a material new development (then lead with what's new)
 - fewer is fine. never pad with weak picks
 
 ## 4. research (the 3 post stories only)
@@ -73,7 +73,7 @@ Follow the profile exactly: post structure, voice, casing, series formats, reply
 
 ## 7. save to Typefully (`create_draft`)
 Posts:
-- `social_set_id`: 147934
+- `social_set_id`: 352870
 - `platforms.x.enabled`: true; `platforms.x.posts`: [main post (with `quote_post_url` if used), self-reply]
 - `tags`: ["needs-review"] plus `security-alert` or `op-tcg` for series posts
 - `draft_title`: `<lane> | <short topic> | <YYYY-MM-DD HH:MM MYT>`
