@@ -278,6 +278,39 @@ def research(cfg, api_key, now_utc):
     log(f"wrote {path.relative_to(ROOT)}; ${cost:.4f}")
 
 
+# ---------- voice ----------
+
+VOICE_PROMPT = """search X for {kind} by @{handle} and return them VERBATIM. copy the exact text character for character:
+same casing, spelling, slang, abbreviations, punctuation, emojis and line breaks. do not paraphrase, summarise, fix typos or translate.
+return up to {n} of the most recent ones, newest first. use at most 5 searches.
+
+format for each:
+---
+date: <YYYY-MM-DD>
+url: <post url>
+{extra}text:
+<exact text>"""
+
+
+def voice(cfg, api_key, now_utc):
+    handle = (os.environ.get("HANDLE") or "insomniac988").lstrip("@")
+    since = now_utc - dt.timedelta(days=120)
+    jobs = [("original posts (not replies, not reposts)", "", "posts"),
+            ("replies to other accounts", "replying to: <@handle and a one-line gist of the post being replied to>\n", "replies")]
+    out = ["---", f"generated_at: {now_utc.isoformat()}", f"handle: {handle}", "---", ""]
+    total = 0.0
+    for kind, extra, label in jobs:
+        res = xai(cfg["model"], VOICE_PROMPT.format(kind=kind, handle=handle, n=40, extra=extra),
+                  x_tool(since, now_utc, [handle]), api_key, f"voice {label}")
+        total += res["cost"]
+        out += [f"## {label}", res["text"] or f"_failed: {res['error']}_", ""]
+    log_cost(now_utc, "voice", total, 0, "-")
+    d = ROOT / "voice"
+    d.mkdir(exist_ok=True)
+    (d / f"{handle}-corpus.md").write_text("\n".join(out))
+    log(f"wrote voice/{handle}-corpus.md; ${total:.4f}")
+
+
 def main():
     api_key = (os.environ.get("XAI_API_KEY") or "").strip().strip("'\"").strip()
     if not api_key:
@@ -289,6 +322,8 @@ def main():
     mode = (os.environ.get("MODE") or "detect").strip()
     if mode == "research":
         research(cfg, api_key, now_utc)
+    elif mode == "voice":
+        voice(cfg, api_key, now_utc)
     else:
         detect(cfg, api_key, now_utc)
 

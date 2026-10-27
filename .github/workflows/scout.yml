@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "detect (scan) or research (deep dive on picked stories)"
+        description: "detect (scan), research (deep dive on picked stories), or voice (pull own posts)"
         required: false
         default: "detect"
       lanes:
@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name "scout-bot"
           git config user.email "scout-bot@users.noreply.github.com"
-          mkdir -p briefs research && git add briefs/ research/
+          mkdir -p briefs research voice && git add briefs/ research/ voice/
           git diff --cached --quiet && exit 0
           git commit -m "${{ inputs.mode || 'detect' }} $(TZ=Asia/Kuala_Lumpur date +'%Y-%m-%d %H:%M') MYT"
           for i in 1 2 3; do git pull --rebase && git push && exit 0; sleep 5; done
