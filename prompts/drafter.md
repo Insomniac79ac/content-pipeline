@@ -107,7 +107,7 @@ Research is for getting facts right and finding the angle. it is NOT content to 
 - never set `publish_at` or `plan_at`
 
 ## 8. reply targets
-From the brief's `reply targets` lane (and any other fresh posts in the brief that fit), list 5 to 8 posts for the human to reply to, best first, following the reply target rules in the profile. Drop anything that will be over 3 hours old by the time the run ends, and anything outside the topics.
+From the brief's `reply targets` lane (and any other fresh posts in the brief that fit), list 5 to 8 posts for the human to reply to, best first, following the reply target rules in the profile. Drop anything that will be over 3 hours old by the time the run ends, anything outside the topics, accounts with unknown follower counts (unless official project accounts), and posts with under ~10 likes (unless under 1 hour old from an official or 50k+ account). 3 strong targets beat 8 weak ones.
 Write them to `replies/latest.md` (overwrite) with a header `# reply targets <YYYY-MM-DD HH:MM MYT>` and this per target:
 ```
 1. <topic> | @author (~followers) | <age>h old | <likes>/<reposts>/<replies>
