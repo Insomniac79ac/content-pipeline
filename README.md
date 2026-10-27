@@ -3,7 +3,7 @@
 Scans narratives, researches the best stories, drafts posts, lists reply targets, queues drafts for manual review. Unreviewed content is never posted.
 
 ## flow
-A Claude scheduled task runs at 6:30am, 12:30pm and 8:30pm MYT and follows `prompts/drafter.md`:
+A Claude scheduled task runs at ~10am and ~5pm MYT and follows `prompts/drafter.md`:
 1. **detect**: dispatches the `scout` workflow (Grok). open X searches every run; your X list (handle lanes) on the morning run only. writes `briefs/`
 2. **learn**: checks which earlier drafts you posted, edited, ignored or deleted (`ledger/`)
 3. **pick**: up to 3 post stories

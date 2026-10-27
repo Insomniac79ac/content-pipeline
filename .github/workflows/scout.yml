@@ -10,7 +10,7 @@ on:
         required: false
         default: "detect"
       lanes:
-        description: "detect only: all | open (blank = all before 10am MYT, else open)"
+        description: "detect only: all | open (blank = all before 12pm MYT, else open)"
         required: false
         default: ""
       stories:

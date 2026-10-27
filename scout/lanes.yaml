@@ -4,7 +4,7 @@
 
 model: grok-4.3
 max_window_hours: 24              # cap on how far back an open search looks
-handle_lanes_before_hour_myt: 10  # handle lanes run only on the morning run (last 24h)
+handle_lanes_before_hour_myt: 12  # handle lanes run only on the morning run (last 24h)
 research_x: true                  # false = skip the Grok deep dive, DefiLlama data only
 
 lanes:

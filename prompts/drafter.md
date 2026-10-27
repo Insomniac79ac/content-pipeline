@@ -12,7 +12,7 @@ You run the content pipeline for @insomniac988: scan, pick, research, draft post
 
 ## 0. setup
 - clone github.com/Insomniac79ac/content-pipeline (or `git pull` if present) and work from the repo root
-- note the current time in MYT (UTC+8). "morning run" = before 10:00 MYT
+- note the current time in MYT (UTC+8). "morning run" = before 12:00 MYT (runs are ~10am and ~5pm)
 - read in full, every run:
   - `profile/insomniac988.md`: goals, topics, voice rules, bans, formats
   - `profile/voice-examples.md`: the human's real posts. this is the target. drafts must read like these
