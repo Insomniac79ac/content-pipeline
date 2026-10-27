@@ -327,18 +327,26 @@ text:
 
 def history(cfg, api_key, now_utc):
     handle = (os.environ.get("HANDLE") or "insomniac988").lstrip("@")
-    months = int(os.environ.get("MONTHS") or 6)
+    # optional params via the `stories` input: {"windows": [["2023-01-01","2023-12-31"]], "topic": "...", "name": "..."}
+    params = json.loads(os.environ.get("STORIES") or "{}") if (os.environ.get("STORIES") or "").strip().startswith("{") else {}
+    topic = params.get("topic", "")
     windows = []
-    for i in range(months):
-        end = now_utc - dt.timedelta(days=30 * i)
-        start = end - dt.timedelta(days=30)
-        windows.append((start, end))
+    if params.get("windows"):
+        for a, b in params["windows"]:
+            windows.append((dt.datetime.fromisoformat(a).replace(tzinfo=dt.timezone.utc),
+                            dt.datetime.fromisoformat(b).replace(tzinfo=dt.timezone.utc)))
+    else:
+        for i in range(int(os.environ.get("MONTHS") or 6)):
+            end = now_utc - dt.timedelta(days=30 * i)
+            windows.append((end - dt.timedelta(days=30), end))
 
     def run(w):
         start, end = w
         tool = {"type": "x_search", "allowed_x_handles": [handle],
                 "from_date": start.strftime("%Y-%m-%d"), "to_date": (end + dt.timedelta(days=1)).strftime("%Y-%m-%d")}
         prompt = HISTORY_PROMPT.format(handle=handle, start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"))
+        if topic:
+            prompt = prompt.replace("published between", f"about {topic}, published between")
         return w, xai(cfg["model"], prompt, tool, api_key, f"history {start:%Y-%m-%d}")
 
     with ThreadPoolExecutor(max_workers=3) as pool:
@@ -350,8 +358,9 @@ def history(cfg, api_key, now_utc):
         out += [f"## {start:%Y-%m-%d} to {end:%Y-%m-%d}", res["text"] or f"_failed: {res['error']}_", ""]
     d = ROOT / "voice"
     d.mkdir(exist_ok=True)
-    (d / f"{handle}-history.md").write_text("\n".join(out))
-    log(f"wrote voice/{handle}-history.md; ${total:.4f}")
+    name = params.get("name") or "history"
+    (d / f"{handle}-{name}.md").write_text("\n".join(out))
+    log(f"wrote voice/{handle}-{name}.md; ${total:.4f}")
 
 
 def main():
