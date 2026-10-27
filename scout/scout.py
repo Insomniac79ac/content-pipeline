@@ -311,6 +311,49 @@ def voice(cfg, api_key, now_utc):
     log(f"wrote voice/{handle}-corpus.md; ${total:.4f}")
 
 
+HISTORY_PROMPT = """search X for posts by @{handle} published between {start} and {end}. include original posts,
+quote posts, and replies longer than ~80 characters. skip one-liners, emoji-only replies and reposts.
+return them VERBATIM: exact text character for character, same casing, slang, punctuation, emojis and line breaks.
+do not paraphrase, summarise or fix anything. return up to 25, spread across the whole period. use at most 4 searches.
+
+format for each:
+---
+date: <YYYY-MM-DD>
+url: <post url>
+type: <post | quote | reply>
+text:
+<exact text>"""
+
+
+def history(cfg, api_key, now_utc):
+    handle = (os.environ.get("HANDLE") or "insomniac988").lstrip("@")
+    months = int(os.environ.get("MONTHS") or 6)
+    windows = []
+    for i in range(months):
+        end = now_utc - dt.timedelta(days=30 * i)
+        start = end - dt.timedelta(days=30)
+        windows.append((start, end))
+
+    def run(w):
+        start, end = w
+        tool = {"type": "x_search", "allowed_x_handles": [handle],
+                "from_date": start.strftime("%Y-%m-%d"), "to_date": (end + dt.timedelta(days=1)).strftime("%Y-%m-%d")}
+        prompt = HISTORY_PROMPT.format(handle=handle, start=start.strftime("%Y-%m-%d"), end=end.strftime("%Y-%m-%d"))
+        return w, xai(cfg["model"], prompt, tool, api_key, f"history {start:%Y-%m-%d}")
+
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        results = list(pool.map(run, windows))
+    total = sum(r[1]["cost"] for r in results)
+    log_cost(now_utc, "history", total, sum(r[1]["calls"] for r in results), "-")
+    out = ["---", f"generated_at: {now_utc.isoformat()}", f"handle: {handle}", f"months: {months}", "---", ""]
+    for (start, end), res in results:
+        out += [f"## {start:%Y-%m-%d} to {end:%Y-%m-%d}", res["text"] or f"_failed: {res['error']}_", ""]
+    d = ROOT / "voice"
+    d.mkdir(exist_ok=True)
+    (d / f"{handle}-history.md").write_text("\n".join(out))
+    log(f"wrote voice/{handle}-history.md; ${total:.4f}")
+
+
 def main():
     api_key = (os.environ.get("XAI_API_KEY") or "").strip().strip("'\"").strip()
     if not api_key:
@@ -324,6 +367,8 @@ def main():
         research(cfg, api_key, now_utc)
     elif mode == "voice":
         voice(cfg, api_key, now_utc)
+    elif mode == "history":
+        history(cfg, api_key, now_utc)
     else:
         detect(cfg, api_key, now_utc)
 
