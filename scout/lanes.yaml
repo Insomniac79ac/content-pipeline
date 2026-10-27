@@ -36,21 +36,46 @@ lanes:
     focus: NFT communities, drama, floor moves, ecosystem shutdowns or launches
     handles: [pudgypenguins, FoxyPenguinApe, HouseofChimera, manyaaww, ahboyash, mteamisloading, NPC_68]
 
-  # open searches: no handle filter, Grok searches all of X. these run every time.
-  - name: open / defi + options + infra
+  # every-run lanes. handle lanes above run on the morning run only.
+  - name: products + onchain options
+    every_run: true
     focus: >-
-      most discussed new developments in onchain options, DeFi protocols and infrastructure, yields,
-      incentives, launches, governance fights. prefer posts with real engagement or from credible accounts
-    handles: []
+      Thetanuts, Odette and ZendFi updates, plus competitor and market news in onchain options
+      (Derive, Rysk): launches, volumes, incentives, partnerships, criticism
+    handles: [ThetanutsFi, odetteonchain, DeriveXYZ, ryskfinance]
 
+  # open searches: no handle filter, Grok searches all of X. these run every time.
   - name: open / security
     focus: >-
-      exploits, hacks, drainers, compromised products or wallets, scams spreading, incident responses,
-      post-mortems. prioritise anything where users may need to act
+      exploits, hacks, drainers, compromised products or wallets, phishing waves, supply-chain tampering,
+      incident responses, post-mortems. prioritise anything where users may need to act
     handles: []
 
-  - name: open / macro + majors + one piece tcg
+  - name: open / crosschain + bridging
     focus: >-
-      macro moves hitting crypto, BTC/ETH/SOL positioning and flows, regulation, plus One Piece TCG
-      set releases, reprints, price moves and market sentiment
+      bridges and interoperability: LayerZero, Wormhole, Axelar, CCIP, Across, Relay, LI.FI, Stargate,
+      Hyperlane, intents and solvers, native/canonical bridges, bridge exploits, interop token or IP disputes,
+      crosschain volume shifts
+    handles: []
+
+  - name: open / accountability + markets
+    focus: >-
+      KOLs dumping on followers, projects dumping tokens or going quiet, airdrop and TGE drama, unprofessional
+      team behaviour, Strategy and other treasury companies buying or selling, macro catalysts hitting crypto,
+      BTC/ETH/SOL positioning and flows
+    handles: []
+
+  - name: open / one piece tcg
+    focus: >-
+      One Piece TCG: set releases and reveals, reprints, Bandai pre-orders, big price moves on chase cards,
+      grading/slabbing, scalpers and live-rip sellers, tournament meta shifts, onchain TCG gacha
+    handles: []
+
+  # reply targets: fresh posts from bigger accounts to reply to for visibility
+  - name: reply targets
+    kind: reply_targets
+    window_hours: 3
+    focus: >-
+      One Piece TCG, crypto security and scams, crosschain/bridging, KOL and project accountability,
+      BTC/ETH/SOL markets, onchain options
     handles: []

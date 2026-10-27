@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "detect (scan), research (deep dive on picked stories), or voice (pull own posts)"
+        description: "detect | research | engagement | voice | history"
         required: false
         default: "detect"
       lanes:
@@ -14,7 +14,7 @@ on:
         required: false
         default: ""
       stories:
-        description: "research only: JSON list of {id, title, summary, url, defillama_slug}"
+        description: "research: JSON list of stories; engagement: JSON list of post urls; history: JSON params"
         required: false
         default: ""
       model:

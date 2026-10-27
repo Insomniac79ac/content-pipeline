@@ -51,6 +51,42 @@ be concise. use exactly this format per item:
 
 reply "nothing found" only if the search returned zero relevant posts in the window."""
 
+REPLY_TARGETS_PROMPT = """find X posts published after {since} (UTC) that would be good to reply to for visibility.
+
+topics: {focus}
+
+a good target: posted after {since}, from an account with a large following (roughly 20k+ followers) or an official
+project account, with replies and likes already building, where a knowledgeable person could add a sharp take.
+skip scams, giveaways, memecoin shills, ragebait and engagement-farming accounts.
+
+return up to 10, best first, exactly in this format:
+### <topic>
+- post: <url>
+- author: @<handle> (~<followers> followers)
+- posted: <YYYY-MM-DD HH:MM> UTC
+- engagement: <likes>/<reposts>/<replies>
+- gist: <one line on what the post says>
+- why: <one line on why it's a good reply target>
+
+reply "nothing found" only if there are zero suitable posts."""
+
+ENGAGEMENT_PROMPT = """look up these X posts and report their current public metrics. also report the current follower count of @{handle}.
+
+posts:
+{urls}
+
+format exactly:
+followers: <number>
+---
+url: <url>
+likes: <n>
+reposts: <n>
+replies: <n>
+quotes: <n>
+views: <n or unknown>
+(one block per post. use "unknown" when a number isn't visible. do not estimate.)"""
+
+
 RESEARCH_PROMPT = """you are a research assistant for a crypto writer who is about to post about this story.
 
 story: {title}
@@ -181,16 +217,20 @@ def detect(cfg, api_key, now_utc):
     lanes_mode = (os.environ.get("LANES") or "").strip()
     if lanes_mode not in ("all", "open"):
         lanes_mode = "all" if now_utc.astimezone(MYT).hour < cfg.get("handle_lanes_before_hour_myt", 10) else "open"
-    lanes = [l for l in cfg["lanes"] if lanes_mode == "all" or not l.get("handles")]
+    lanes = [l for l in cfg["lanes"] if lanes_mode == "all" or not l.get("handles") or l.get("every_run")]
 
     prev = last_brief_time()
     open_since = max(prev or now_utc - dt.timedelta(hours=12), now_utc - dt.timedelta(hours=cfg["max_window_hours"]))
     handle_since = now_utc - dt.timedelta(hours=24)
 
     def run(lane):
-        since = handle_since if lane.get("handles") else open_since
-        prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
-                                      focus=lane["focus"], n=lane.get("items", 5), fmt=ITEM_FORMAT)
+        if lane.get("kind") == "reply_targets":
+            since = now_utc - dt.timedelta(hours=lane.get("window_hours", 3))
+            prompt = REPLY_TARGETS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"])
+        else:
+            since = open_since if (not lane.get("handles") or lane.get("every_run")) else handle_since
+            prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
+                                          focus=lane["focus"], n=lane.get("items", 5), fmt=ITEM_FORMAT)
         res = xai(cfg["model"], prompt, x_tool(since, now_utc, lane.get("handles")), api_key, lane["name"])
         return lane, since, res
 
@@ -276,6 +316,23 @@ def research(cfg, api_key, now_utc):
     path = RESEARCH / f"{stamp(now_utc)}.md"
     path.write_text("\n".join(out))
     log(f"wrote {path.relative_to(ROOT)}; ${cost:.4f}")
+
+
+# ---------- engagement ----------
+
+def engagement(cfg, api_key, now_utc):
+    urls = json.loads(os.environ.get("STORIES") or "[]")
+    handle = (os.environ.get("HANDLE") or "insomniac988").lstrip("@")
+    if not urls:
+        sys.exit("STORIES (list of post urls) is empty")
+    since = now_utc - dt.timedelta(days=30)
+    res = xai(cfg["model"], ENGAGEMENT_PROMPT.format(handle=handle, urls="\n".join(urls[:30])),
+              x_tool(since, now_utc), api_key, "engagement")
+    log_cost(now_utc, "engagement", res["cost"], res["calls"], "ok" if not res["error"] else "fail")
+    RESEARCH.mkdir(exist_ok=True)
+    path = RESEARCH / f"engagement-{stamp(now_utc)}.md"
+    path.write_text(f"---\ngenerated_at: {now_utc.isoformat()}\n---\n\n" + (res["text"] or f"_failed: {res['error']}_"))
+    log(f"wrote {path.relative_to(ROOT)}")
 
 
 # ---------- voice ----------
@@ -378,6 +435,8 @@ def main():
         voice(cfg, api_key, now_utc)
     elif mode == "history":
         history(cfg, api_key, now_utc)
+    elif mode == "engagement":
+        engagement(cfg, api_key, now_utc)
     else:
         detect(cfg, api_key, now_utc)
 
