@@ -353,7 +353,7 @@ def history(cfg, api_key, now_utc):
         results = list(pool.map(run, windows))
     total = sum(r[1]["cost"] for r in results)
     log_cost(now_utc, "history", total, sum(r[1]["calls"] for r in results), "-")
-    out = ["---", f"generated_at: {now_utc.isoformat()}", f"handle: {handle}", f"months: {months}", "---", ""]
+    out = ["---", f"generated_at: {now_utc.isoformat()}", f"handle: {handle}", f"topic: {topic or 'all'}", f"windows: {len(windows)}", "---", ""]
     for (start, end), res in results:
         out += [f"## {start:%Y-%m-%d} to {end:%Y-%m-%d}", res["text"] or f"_failed: {res['error']}_", ""]
     d = ROOT / "voice"
@@ -383,4 +383,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception:  # surface the real error as a run annotation
+        import traceback
+        tb = traceback.format_exc()
+        print(tb, flush=True)
+        print("::error::" + tb.strip().splitlines()[-1], flush=True)
+        sys.exit(1)
