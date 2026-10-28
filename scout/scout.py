@@ -9,6 +9,7 @@ research: deep dive on the stories the drafter picked (STORIES env, JSON list).
 
 import csv
 import datetime as dt
+import time
 import json
 import os
 import re
@@ -55,8 +56,8 @@ REPLY_TARGETS_PROMPT = """find X posts published after {since} (UTC) that would 
 
 topics: {focus}
 
-a good target: posted after {since}, from an account with a large following (roughly 20k+ followers) or an official
-project account, with replies and likes already building, where a knowledgeable person could add a sharp take.
+a good target: posted after {since} (fresher is better), from an account with a large following (roughly 10k+ followers) or an
+official project account, with replies and likes already building, where a knowledgeable person could add a sharp take.
 skip scams, giveaways, memecoin shills, ragebait and engagement-farming accounts.
 
 return up to 10, best first, exactly in this format:
@@ -140,7 +141,9 @@ def extract_text_and_links(data):
 def xai(model, prompt, tool, api_key, label):
     body = {"model": model, "input": [{"role": "user", "content": prompt}], "tools": [tool]}
     err = None
-    for attempt in (1, 2):
+    for attempt in (1, 2, 3):
+        if attempt > 1:
+            time.sleep(20 if attempt == 2 else 60)  # backoff: xAI returns 429 "at capacity" at busy times
         try:
             r = requests.post(XAI_URL, json=body, timeout=240,
                               headers={"Authorization": f"Bearer {api_key}"})

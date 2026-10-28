@@ -74,7 +74,7 @@ lanes:
   # reply targets: fresh posts from bigger accounts to reply to for visibility
   - name: reply targets
     kind: reply_targets
-    window_hours: 3
+    window_hours: 6
     focus: >-
       One Piece TCG, crypto security and scams, crosschain/bridging, KOL and project accountability,
       BTC/ETH/SOL markets, onchain options

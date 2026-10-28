@@ -83,6 +83,6 @@ who's at risk in line 1, what to do in short imperative lines, no preamble, no s
 
 ## Reply targets (no drafted replies)
 - each run lists posts worth replying to for visibility. the human writes the replies
-- target: posted under 3 hours ago (under 1h is best), from an account bigger than @insomniac988 or an official project account, inside the topics above, with engagement already building
+- target: posted under 3 hours ago ideally (under 1h is best, up to 6h if engagement is still climbing), from an account bigger than @insomniac988 or an official project account, inside the topics above, with engagement already building
 - skip scams, giveaways, memecoin shills, and ragebait accounts
 - for each: link, @author (~followers), age, likes/replies so far, topic, one line on why it's a good target
