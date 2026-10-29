@@ -57,7 +57,8 @@ HOT_POSTS_PROMPT = """what are crypto twitter's most talked-about stories and co
 think: who is crypto twitter dunking on or arguing about right now, what blew up, who got caught, what leaked, what got exploited.
 useful search terms: {keywords}
 
-step 1: search X broadly (several searches) and identify up to 6 stories getting the most attention.
+step 1: run several keyword searches in Top mode (not Latest) with min_faves:100 and since:<date> filters,
+and identify up to 6 stories getting the most attention.
 step 2: for each story, find the single most-viewed or most-liked X post about it (often a clip, a callout, or the
 original post). report that post.
 
@@ -75,13 +76,17 @@ format for each, most attention first:
 
 reply "nothing found" only if nothing in these areas got real attention."""
 
-HOT_HANDLES_PROMPT = """list every post these accounts published since {since} (UTC), then report the ones getting the
-most attention (views, likes, replies, quotes), most attention first. up to 8.
+HOT_HANDLES_PROMPT = """find the posts getting the most attention from these accounts since {since} (UTC).
 
+important: these accounts post a lot, so do NOT just read their latest posts. run one keyword search per account
+in Top mode (not Latest) with a minimum-likes filter, exactly like this:
+{queries}
+
+then keep only posts published after {since}, merge, and rank by attention (views, likes, replies, quotes).
 focus: {focus}. include drama, callouts, clips of people behaving badly, leaks, exploits, rugs and blowups.
-skip giveaways, ads and paid promos.
+skip giveaways, ads, paid promos, sports and off-topic posts.
 
-format for each:
+return up to 8, most attention first, in this format:
 ### <story in a few words>
 - post: <url>
 - author: @<handle> (~<followers> followers)
@@ -90,7 +95,7 @@ format for each:
 - gist: <one or two lines on what the post says, quoting key lines>
 - heat: <why ppl are reacting: the villain, the outrage, the stakes>
 
-reply "nothing found" only if these accounts posted nothing in the window."""
+reply "nothing found" only if every search returned nothing in the window."""
 
 
 ENGAGEMENT_PROMPT = """look up these X posts and report their current public metrics. also report the current follower count of @{handle}.
@@ -258,10 +263,10 @@ def detect(cfg, api_key, now_utc):
         if lane.get("kind") == "hot_posts":
             since = now_utc - dt.timedelta(hours=lane.get("window_hours", 12))
             if lane.get("handles"):
-                # same prompt shape as the regular lanes (proven to return results), ranked by attention
-                prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
-                                              focus=lane["focus"] + ". rank by attention: views, likes, replies, quotes",
-                                              n=8, fmt=ITEM_FORMAT)
+                queries = "\n".join(f"- from:{h} min_faves:{lane.get('min_faves', 50)} since:{since:%Y-%m-%d} (Top mode)"
+                                     for h in lane["handles"])
+                prompt = HOT_HANDLES_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
+                                                   queries=queries)
             else:
                 prompt = HOT_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
                                                  keywords=", ".join(lane.get("keywords", [])))
