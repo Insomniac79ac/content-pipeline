@@ -52,19 +52,20 @@ be concise. use exactly this format per item:
 
 reply "nothing found" only if the search returned zero relevant posts in the window."""
 
-HOT_POSTS_PROMPT = """find the most-viewed X posts published after {since} (UTC) on these topics: {focus}
+HOT_POSTS_PROMPT = """what are crypto twitter's most talked-about stories and controversies since {since} (UTC) in these areas: {focus}
 
-run several separate keyword searches (at least 4), each combining a few of these keywords with X search operators
-to surface high-traction posts, for example: (rug OR rugged OR scam) min_faves:100 -filter:replies
-keywords: {keywords}
-also run one search for the topic in general with min_faves:300.
-we want posts that are blowing up: roughly 10k+ views or 100+ likes, or a big account (50k+ followers) with replies
-climbing. include video and clip posts and posts about a person or influencer behaving badly.
-sort what you find by views and engagement.
-skip giveaways, memecoin shills, paid promos, and engagement farming.
+think: who is crypto twitter dunking on or arguing about right now, what blew up, who got caught, what leaked, what got exploited.
+useful search terms: {keywords}
 
-return up to 8, most viewed first, exactly in this format:
-### <topic in a few words>
+step 1: search X broadly (several searches) and identify up to 6 stories getting the most attention.
+step 2: for each story, find the single most-viewed or most-liked X post about it (often a clip, a callout, or the
+original post). report that post.
+
+skip giveaways, memecoin shills, paid promos and engagement farming. a story about one influencer or founder
+behaving badly counts.
+
+format for each, most attention first:
+### <story in a few words>
 - post: <url>
 - author: @<handle> (~<followers> followers)
 - posted: <YYYY-MM-DD HH:MM> UTC
@@ -72,7 +73,7 @@ return up to 8, most viewed first, exactly in this format:
 - gist: <one or two lines on what the post says, quoting key lines>
 - heat: <why ppl are reacting: the villain, the outrage, the stakes>
 
-reply "nothing found" only if no post in the window has meaningful traction."""
+reply "nothing found" only if nothing in these areas got real attention."""
 
 ENGAGEMENT_PROMPT = """look up these X posts and report their current public metrics. also report the current follower count of @{handle}.
 
