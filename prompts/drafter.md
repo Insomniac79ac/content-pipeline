@@ -52,10 +52,14 @@ Morning run: rewrite `ledger/learnings.md` as at most 20 short bullets, only fro
 - which posted drafts got the most replies, reposts and quotes, and the follower trend
 - say "not enough data yet" until there are 10+ resolved entries
 
-## 3. pick 3 post stories
+## 3. pick
+### 3a. hot posts (do these first)
+From the brief's `hot /` lanes, pick the top 1 or 2 posts that fit the account's topics and that the human would want to react to (a villain, an outrage, a leak, a blowup, an exploit, an OP TCG scandal). Each gets a **quote-post draft** (see step 7). Prefer the most viewed and freshest. Skip anything already covered in the ledger.
+
+### 3b. up to 3 post stories
 Rank by:
 1. fit with the profile's topic ranking and the account's goals
-2. an angle the human would actually post: a clear opinion, a callout, one fact ppl haven't seen, or a deeper read. if the only possible post restates the news, skip it
+2. an angle the human would actually post: a clear opinion, a callout with a named culprit, a security alert, a one piece tcg reaction. no analysis, explainers or market-structure breakdowns (the human deletes those). if the only possible post restates the news, skip it
 3. timeliness and how much discussion it's getting
 4. variety: different topics across the 3, and across the day
 5. what `learnings.md` says gets posted and engaged with
@@ -68,7 +72,7 @@ Mix rules:
 - dedupe: list the 50 most recent Typefully drafts for social set 352870 and check `ledger/drafts.jsonl`. skip anything covered in the last 14 days unless there's a material new development
 - fewer than 3 is fine. never pad
 
-## 4. research (the picked stories only)
+## 4. research (the picked stories and hot posts)
 Write the picks to a JSON list and dispatch research:
 ```
 [{"id": "s1", "title": "...", "summary": "2 to 3 lines from the brief", "url": "key post url", "defillama_slug": "slug from the brief's market data, or omit"}]
@@ -83,11 +87,12 @@ Research is for getting facts right and finding the angle. it is NOT content to 
 
 ## 5. write
 - read `profile/voice-examples.md` again right before writing. write each draft the way the human would type it, matching the closest real example in length and shape
-- default length: 1 to 5 short lines, under ~400 characters. one explainer max per day
+- default length: 1 to 5 short lines, under ~400 characters. no explainers. study the "draft → posted" pairs in `voice-examples.md`: write like the posted versions (more heat, name who's to blame, plain words, tag the account, credit numbers inline, soften predictions)
 - quote post by default when the story starts from a specific X post (`quote_post_url`)
 - one number, maybe two. the rest of the research stays in the scratchpad
 - facts only from the brief, research or your web search. numbers and names exactly as sourced. an unverified claim is either framed as such ("my guess is", "if true") or dropped
-- product posts: follow the product rules in the profile (natural disclosure, honest about downsides)
+- product posts: follow the product rules in the profile (quote the product's own post, concrete incentive, "they're built on thetanuts", honest about downsides)
+- hot-post quote drafts: the human's reaction to the post, usually 1 to 4 lines, set the post as `quote_post_url`
 - never invent personal experience. only use experience stated in the profile, examples or products file
 
 ## 6. self-check every draft, rewrite if any fail
@@ -101,28 +106,29 @@ Research is for getting facts right and finding the angle. it is NOT content to 
 ## 7. save to Typefully (`create_draft`)
 - `social_set_id`: 352870
 - `platforms.x.enabled`: true; `platforms.x.posts`: [the post (with `quote_post_url` if used)] plus a self-reply only if a link is genuinely useful to the reader
-- `tags`: ["needs-review"] plus `security-alert`, `op-tcg` or `product` where they apply
-- `draft_title`: `<topic> | <short topic> | <YYYY-MM-DD HH:MM MYT>`
+- `tags`: ["needs-review"] plus `hot`, `security-alert`, `op-tcg` or `product` where they apply
+- `draft_title`: `<topic> | <short topic> | <YYYY-MM-DD HH:MM MYT>`; hot-post drafts start with `HOT | ` and include the post's age and views
 - `scratchpad_text`: why picked (one line); angle; key facts with sources (all links); suggested visual (or "none"); brief and research filenames
 - never set `publish_at` or `plan_at`
 
 ## 8. reply targets
-From the brief's `reply targets` lane (and any other fresh posts in the brief that fit), list 5 to 8 posts for the human to reply to, best first, following the reply target rules in the profile. Prefer posts under 3 hours old; allow up to 6 hours if engagement is still climbing. Drop anything older, anything outside the topics, accounts with unknown follower counts (unless official project accounts), and posts with under ~10 likes (unless under 1 hour old from an official or 50k+ account). 3 strong targets beat 8 weak ones.
+From the brief's `hot /` lanes (the posts that didn't get a quote draft) and any other fresh, high-traction posts in the brief, list up to 6 posts for the human to reply to, best first. Prefer posts under 6 hours old with views or likes still climbing. Drop anything outside the topics, scams, shills and paid promos. 3 strong targets beat 6 weak ones.
 Write them to `replies/latest.md` (overwrite) with a header `# reply targets <YYYY-MM-DD HH:MM MYT>` and this per target:
 ```
-1. <topic> | @author (~followers) | <age>h old | <likes>/<reposts>/<replies>
+1. <topic> | @author (~followers) | <age>h old | <views> views, <likes> likes
    <post url>
    <gist in one line> | why: <one line>
 ```
 
 ## 9. ledger
 Append one JSON line per draft created to `ledger/drafts.jsonl`:
-`{"typefully_id": 0, "created_at": "ISO UTC", "kind": "post", "topic": "", "series": "security-alert|op-tcg|null", "product": "thetanuts|odette|zendfi|null", "format": "quote|take|explainer|alert", "title": "", "original_text": "", "status": "pending"}`
+`{"typefully_id": 0, "created_at": "ISO UTC", "kind": "post", "topic": "", "series": "security-alert|op-tcg|null", "product": "thetanuts|odette|zendfi|null", "format": "hot|quote|take|alert|rant", "title": "", "original_text": "", "status": "pending"}`
 Commit `ledger/` and `replies/` with message `drafter: <YYYY-MM-DD HH:MM> MYT`, then `git pull --rebase && git push` (retry up to 3 times).
 
 ## 10. finish
 End with this summary (the human reads it in the run):
-1. the reply target list, exactly as written to `replies/latest.md`
-2. drafts created (titles)
-3. stories skipped and why (one line each)
-4. this run's scout + research cost from the newest rows of `briefs/costs.csv`
+1. HOT: each hot-post quote draft (the post link, its views, and the first line of the draft)
+2. the reply target list, exactly as written to `replies/latest.md`
+3. other drafts created (titles)
+4. stories skipped and why (one line each)
+5. this run's scout + research cost from the newest rows of `briefs/costs.csv`

@@ -2,6 +2,149 @@
 
 Real posts, copied verbatim (pulled via Grok x_search, Oct 2026). These are the reference for every draft: match them, not the rules alone.
 
+
+## the human's edits of past drafts (draft → what he actually posted)
+
+These are the strongest signal of the voice. Write the way the right-hand version reads.
+
+### OP18 leak
+draft:
+```
+OP18 cards are already showing up on a Whatnot stream and the set only releases nov 20
+
+my guess is someone up the distro chain is letting live-rip sellers get product early
+
+and ppl wonder why they can't buy sealed at msrp 🥲
+```
+posted:
+```
+how tf are OP18 cards already getting leaked on a Whatnot stream?
+
+set only releases on nov 20
+
+my guess this live-rip seller has connections up the distro chain. Bandai should find out who and terminate them
+
+it's no surprise we can't buy shit at msrp 🥲
+```
+_draft too polite. he opened incredulous, named who's to blame, said what should happen to them, and swore_
+
+### Fed / Odette product post
+draft:
+```
+fed is ~90% priced for a hold tonight, so the decision itself is probably a non event
+
+what moves things is whether Warsh leans into a december hike. FedWatch already has that at 73%
+
+if you want to trade the reaction without getting liquidated on a wick, we have 0DTE options on @odetteonchain (built on thetanuts infra where i work). first expiry settles 14h after the decision
+```
+posted:
+```
+on @Polymarket the fed is 95% expected to hold rates tonight, so the decision itself is probably a non-event
+
+what might move the market is whether Kevin Warsh leans into a possible december hike. FedWatch currently has that at a 73% possibility
+
+if you want to trade the market's reaction without getting liquidated, we have 0DTE options on @odetteonchain (they're built on thetanuts)
+
+first expiry settles 14h after the decision and the top trader of the week walks away with $500
+```
+_credited the source inline, full name, softened the prediction, lighter disclosure, added the prize. posted as a quote of Odette's own post with its image_
+
+### Zilliqa bridge
+draft:
+```
+Zilliqa's X-Bridge got exploited in feb 2025 and their CEO stepped down two months later
+
+now the bridge is suspended again after another security incident and another CEO is out
+
+swapping CEOs won't help much if the same bridge keeps getting popped 😅
+```
+posted:
+```
+.@zilliqa's X-Bridge got exploited in feb 2025 and their CEO stepped down two months later
+
+now their bridge is suspended again after another security incident and another CEO is out again
+
+changing CEOs every time the bridge has issues doesn't solve anything 😅
+```
+_tagged the account, plain words instead of slang_
+
+### Solflare alert
+draft:
+```
+if you stake SOL with Solflare's validator, your SOL is safe but rewards are paused after their staking provider had the validator keys compromised
+
+the migration will come through the Solflare app. any DM or link offering to "migrate" your stake before that is a scam
+```
+posted:
+```
+if you stake SOL with Solflare's validator, their validator key was compromised. your SOL is safe but rewards are paused
+
+if it affects you, keep tabs of their announcements for updates
+```
+_shorter, simpler, dropped the non-essential warning_
+
+### EB05 Nami (kept almost as drafted)
+draft:
+```
+EB-05 is out on saturday and the secret rare Nami will be the chase
+
+before you pay day one prices for it, remember the wedding Nami from OP15 is down 80% off its peak
+```
+posted:
+```
+EB05 is out this saturday and the secret rare Nami will be the chase
+
+but before you pay day one prices for it, remember the wedding Nami from OP15 is down 80% off its peak
+```
+_the target shape: short, collector's eye, callback to his own earlier post. posted as a quote of the reveal_
+
+## recent own posts (Oct 27 to 29)
+
+### Mika token launch / grifter callout (own post, Oct 29)
+```
+this girl Mika and her foul mouth go a long way back
+
+she runs in the US crypto circle and can't be trusted. she and her buddies only want one thing... to extract as much money as possible from ppl dumb enough to buy their tokens
+```
+
+### pump.fun rant (own quote post, Oct 27)
+```
+the problem is:
+
+• @Pumpfun is extracting in more ways than one
+• the majority launching tokens are extracting from more wallets than one
+
+the whole segment is predicated on launching token > extracting > letting the last ones out holding the losses
+
+how much of the fees that pumpfun takes actually goes back into tokens launched on its platform? 
+
+ZERO
+
+part of the fees goes to the extractor (creator) which doesn't go to support their own token
+
+it goes to the next extractive token launch
+
+the cycle repeats over and over as the majority get rinsed. how it that positive for the crypto space?
+
+IT IS NOT
+```
+
+### fast exploit alert (own quote post, Oct 27)
+```
+predictfun is currently being exploited
+
+if you've connected your wallet, chances are you might be affected. go check
+```
+
+### community callout (own reply, Oct 29)
+```
+Plenty of scum in this space and a lot were cozying up to the pudgy community in the months past to farm support and a following 
+
+Many of them have now dropped off and you see it in the NFT price chart
+
+Sad part is ppl in the huddle bought their bullshit hook, line and sinker
+```
+
 ## short takes (the default)
 
 ```
@@ -186,7 +329,7 @@ by right, any IP related to the Axelar solution is the ownership of the foundati
 ```
 <sub>2025-12-18 https://x.com/insomniac988/status/2001461035627344175</sub>
 
-## long explainers (rare; built on personal observation)
+## long posts he writes himself (reference only; the drafter does not write these)
 
 ```
 players and collectors aren't just competing with scalpers for One Piece product anymore
