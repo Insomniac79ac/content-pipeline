@@ -72,15 +72,23 @@ lanes:
       grading/slabbing, scalpers and live-rip sellers, tournament meta shifts, onchain TCG gacha
     handles: []
 
-  # hot posts: the most-viewed posts right now in the account's topics. top ones get quote drafts,
-  # the rest become the reply-target list
-  - name: hot / crypto drama + scams + exploits
+  # hot posts: what the big drama / news amplifiers are posting, ranked by attention.
+  # top ones get quote drafts, the rest become the reply-target list. edit the handles freely (max 10 per lane)
+  - name: hot / drama + callouts
     kind: hot_posts
+    every_run: true
     window_hours: 16
-    focus: crypto drama, grifters, rugs, token launch blowups, leaked private keys, KOL callouts, exploits and hacks, scams spreading, exchange incidents
-    keywords: [rug, rugged, scam, scammer, grifter, exploit, exploited, hacked, drained, private key, leaked, insider, bundled, dumped, KOL, influencer, exit liquidity, token launch, launched a token, phishing, compromised, arrested]
+    focus: crypto drama, grifters, influencer and founder blowups, rugs, token launch disasters, leaked keys, investigations
+    handles: [MartinezOnChain, zachxbt, DegenerateNews, solidintel_x, WatcherGuru, Cointelegraph, WuBlockchain, lookonchain, coinbureau, Pentosh1]
 
-  - name: hot / one piece tcg + markets + onchain options
+  - name: hot / exploits + security
+    kind: hot_posts
+    every_run: true
+    window_hours: 16
+    focus: exploits, hacks, drains, phishing waves, compromised wallets or exchanges, scam alerts
+    handles: [PeckShieldAlert, CyversAlerts, SlowMist_Team, Scam_Sniffer, zachxbt, SEAL_911, DarkWebInformer, SpecterAnalyst, dethective, tayvano_]
+
+  - name: hot / open search
     kind: hot_posts
     window_hours: 12
     focus: One Piece TCG leaks, prices, Bandai and scalper drama; big BTC/ETH/SOL moves and the posts everyone is reacting to; onchain options (Derive, Rysk, Thetanuts, Odette)

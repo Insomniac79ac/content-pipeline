@@ -75,6 +75,24 @@ format for each, most attention first:
 
 reply "nothing found" only if nothing in these areas got real attention."""
 
+HOT_HANDLES_PROMPT = """list every post these accounts published since {since} (UTC), then report the ones getting the
+most attention (views, likes, replies, quotes), most attention first. up to 8.
+
+focus: {focus}. include drama, callouts, clips of people behaving badly, leaks, exploits, rugs and blowups.
+skip giveaways, ads and paid promos.
+
+format for each:
+### <story in a few words>
+- post: <url>
+- author: @<handle> (~<followers> followers)
+- posted: <YYYY-MM-DD HH:MM> UTC
+- engagement: <views> views, <likes> likes, <reposts> reposts, <replies> replies
+- gist: <one or two lines on what the post says, quoting key lines>
+- heat: <why ppl are reacting: the villain, the outrage, the stakes>
+
+reply "nothing found" only if these accounts posted nothing in the window."""
+
+
 ENGAGEMENT_PROMPT = """look up these X posts and report their current public metrics. also report the current follower count of @{handle}.
 
 posts:
@@ -239,8 +257,11 @@ def detect(cfg, api_key, now_utc):
     def run(lane):
         if lane.get("kind") == "hot_posts":
             since = now_utc - dt.timedelta(hours=lane.get("window_hours", 12))
-            prompt = HOT_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
-                                             keywords=", ".join(lane.get("keywords", [])))
+            if lane.get("handles"):
+                prompt = HOT_HANDLES_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"])
+            else:
+                prompt = HOT_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
+                                                 keywords=", ".join(lane.get("keywords", [])))
         else:
             since = open_since if (not lane.get("handles") or lane.get("every_run")) else handle_since
             prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
