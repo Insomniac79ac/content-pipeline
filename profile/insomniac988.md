@@ -44,8 +44,7 @@ Single source of truth for drafts on this account. Read this AND `profile/voice-
 - bullets in normal posts
 - em-dashes (—) and en-dashes used as dashes (–)
 - hashtags, "like and follow", "thoughts?", any ask for engagement
-- sign-offs like "stay safe out there folks", "stay safe", "dyor", "nfa"
-- ">" quote-style list lines (that's the Odette page's style, not this account's)
+- sign-offs like "dyor", "nfa" (exception: security alerts, see below)
 - buy/sell calls, price targets
 - press-release words: "unlock", "leverage" (as a verb), "ecosystem play", "game-changer", "landscape", "delve", "robust"
 - every draft having the same shape. vary length and structure across a run
