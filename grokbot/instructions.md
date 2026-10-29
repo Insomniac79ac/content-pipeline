@@ -19,8 +19,9 @@ Times are in MYT (UTC+8) unless marked UTC.
 Search X for every lane in `scout/lanes.yaml`:
 - **morning run (9:30am):** all lanes, including the handle lanes (lanes with `handles` and no `every_run`). handle lanes cover the last 24 hours
 - **afternoon run (4:30pm):** only lanes without handles, plus lanes with `every_run: true`
-- open lanes (no handles) cover the time since your previous brief, max 24 hours
-- `kind: hot_posts` lanes with handles: these accounts post a lot, so do NOT read their latest posts only. search each account in **Top** mode with a likes filter, e.g. `from:MartinezOnChain min_faves:50 since:2026-10-29` (use the lane's `min_faves` if set). keep posts inside the lane's `window_hours`, rank by attention
+- open lanes (no handles) and `every_run: true` lanes (except `kind: hot_posts`) cover the time since your previous brief, max 24 hours
+- `kind: hot_posts` lanes cover their own `window_hours`
+- `kind: hot_posts` lanes with handles: these accounts post a lot, so do NOT read their latest posts only. search each account in **Top** mode. if the search ignores likes filters, apply the lane's `min_faves` (default 50) yourself after fetching. keep posts inside the lane's `window_hours`, rank by attention
 - `kind: hot_posts` lanes without handles: several keyword searches in **Top** mode with `min_faves:100`, using the lane's `keywords`
 - `kind: own_posts`: list everything @insomniac988 posted in the last 24 hours (so the drafter doesn't repeat it)
 
