@@ -19,8 +19,11 @@ You run the content pipeline for @insomniac988: scan, pick, research, draft post
   - `profile/products.md`: facts and angles for Thetanuts, Odette, ZendFi
   - `ledger/learnings.md`: what the human actually posts, edits, ignores
 
-## 1. detect (fresh scan)
-Dispatch the scout and wait for it:
+## 1. get the brief
+Grok Bot (the scout) writes a brief to `briefs/` at ~9:30am and ~4:30pm MYT, and keeps `hot/latest.md` updated with hot posts it alerted the human about.
+- `git pull`, then read the newest file in `briefs/`
+- if the newest brief has `source: grokbot` and its `generated_at` is under 2 hours old, use it
+- otherwise Grok Bot missed this run. fall back to the API scout and wait for it:
 ```
 before=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 gh workflow run scout.yml -f mode=detect
@@ -29,8 +32,8 @@ id=$(gh run list --workflow scout.yml --limit 5 --json databaseId,createdAt -q "
 gh run watch "$id" --exit-status   # allow up to 15 minutes
 git pull
 ```
-Read the newest file in `briefs/`. If the run failed, use the newest existing brief only if its `generated_at` is under 6 hours old; otherwise stop and create nothing.
-Morning runs also include the handle lanes (the human's X list).
+  then read the newest brief. say "Grok Bot brief missing, used API fallback" at the top of the final summary. if the fallback also fails, use the newest brief only if it is under 6 hours old; otherwise stop and create nothing
+- also read `hot/latest.md`: these hot posts were already sent to the human with a suggested quote. treat them as top candidates for hot-post quote drafts (step 3a) unless the human already posted about them (`own recent posts` lane)
 
 ## 2. learn
 Every run:
@@ -54,7 +57,7 @@ Morning run: rewrite `ledger/learnings.md` as at most 20 short bullets, only fro
 
 ## 3. pick
 ### 3a. hot posts (do these first)
-From the brief's `hot /` lanes, pick the top 1 or 2 posts that fit the account's topics and that the human would want to react to (a villain, an outrage, a leak, a blowup, an exploit, an OP TCG scandal). Each gets a **quote-post draft** (see step 7). Prefer the most viewed and freshest. Skip anything already covered in the ledger, and anything the human already posted, quoted or replied to himself (the brief's `own recent posts` lane).
+From `hot/latest.md` and the brief's `hot /` lanes, pick the top 1 or 2 posts that fit the account's topics and that the human would want to react to (a villain, an outrage, a leak, a blowup, an exploit, an OP TCG scandal). Each gets a **quote-post draft** (see step 7). Prefer the most viewed and freshest. Skip anything already covered in the ledger, and anything the human already posted, quoted or replied to himself (the brief's `own recent posts` lane).
 
 ### 3b. up to 3 post stories
 Rank by:

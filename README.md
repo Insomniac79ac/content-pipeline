@@ -4,7 +4,7 @@ Scans narratives, researches the best stories, drafts posts, lists reply targets
 
 ## flow
 A Claude scheduled task runs at ~10am and ~5pm MYT and follows `prompts/drafter.md`:
-1. **detect**: dispatches the `scout` workflow (Grok). open X searches, hot-post searches and your own recent posts (for dedupe) every run; your X list (handle lanes) on the morning run only. writes `briefs/`
+1. **brief**: Grok Bot (instructions in `grokbot/instructions.md`) writes the brief to `briefs/` at ~9:30am / ~4:30pm and monitors hot posts hourly (alerts you directly, logs to `hot/`). if its brief is missing, the drafter falls back to the API scout (`scout` workflow)
 2. **learn**: checks which earlier drafts you posted, edited, ignored or deleted (`ledger/`)
 3. **pick**: 1 to 2 hot posts (most-viewed posts in your topics, from drama/news/security amplifier accounts) for quote drafts, plus up to 3 post stories
 4. **research**: dispatches `scout` in research mode for the 3 stories (Grok X deep dive + DefiLlama), plus its own web search for primary sources. writes `research/`
@@ -18,7 +18,9 @@ You review, edit and schedule in Typefully.
 - `profile/voice-examples.md`: real posts the drafts are matched against
 - `profile/products.md`: Thetanuts, Odette, ZendFi facts and angles
 - `voice/`: raw pulls of the account's own posts (source for the examples)
-- `prompts/drafter.md`: the run steps
+- `prompts/drafter.md`: the drafter's run steps
+- `grokbot/instructions.md`: Grok Bot's scout + hot-post monitoring steps
+- `hot/latest.md`, `hot/alerted.md`: hot posts Grok Bot alerted on
 - `scout/lanes.yaml`: lanes, handle groups (max 10 each), model, `research_x` switch
 - `scout/scout.py`: Grok detect + research
 - `briefs/costs.csv`: xAI cost per run
