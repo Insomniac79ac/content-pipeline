@@ -52,24 +52,23 @@ be concise. use exactly this format per item:
 
 reply "nothing found" only if the search returned zero relevant posts in the window."""
 
-REPLY_TARGETS_PROMPT = """find X posts published after {since} (UTC) that would be good to reply to for visibility.
+HOT_POSTS_PROMPT = """find the most-viewed X posts published after {since} (UTC) on these topics: {focus}
 
-topics: {focus}
+run several separate searches, one per keyword group, using these keywords: {keywords}
+sort what you find by views and engagement. we want posts that are blowing up right now: roughly 20k+ views,
+or 200+ likes, or a big account (50k+ followers) with replies climbing. include video and clip posts.
+skip giveaways, memecoin shills, paid promos, and engagement farming.
 
-a good target: posted after {since} (fresher is better), from an account with a large following (roughly 10k+ followers) or an
-official project account, with replies and likes already building, where a knowledgeable person could add a sharp take.
-skip scams, giveaways, memecoin shills, ragebait and engagement-farming accounts.
-
-return up to 10, best first, exactly in this format:
-### <topic>
+return up to 8, most viewed first, exactly in this format:
+### <topic in a few words>
 - post: <url>
 - author: @<handle> (~<followers> followers)
 - posted: <YYYY-MM-DD HH:MM> UTC
-- engagement: <likes>/<reposts>/<replies>
-- gist: <one line on what the post says>
-- why: <one line on why it's a good reply target>
+- engagement: <views> views, <likes> likes, <reposts> reposts, <replies> replies
+- gist: <one or two lines on what the post says, quoting key lines>
+- heat: <why ppl are reacting: the villain, the outrage, the stakes>
 
-reply "nothing found" only if there are zero suitable posts."""
+reply "nothing found" only if no post in the window has meaningful traction."""
 
 ENGAGEMENT_PROMPT = """look up these X posts and report their current public metrics. also report the current follower count of @{handle}.
 
@@ -175,7 +174,10 @@ def x_tool(since, now_utc, handles=None):
 
 def last_brief_time():
     for p in sorted(BRIEFS.glob("20*.md"), reverse=True):
-        m = re.search(r"^generated_at: (\S+)$", p.read_text(), re.M)
+        txt = p.read_text()
+        if re.search(r"^lanes: hot$", txt, re.M):
+            continue  # hot-only briefs don't cover the open lanes
+        m = re.search(r"^generated_at: (\S+)$", txt, re.M)
         if m:
             return dt.datetime.fromisoformat(m.group(1))
     return None
@@ -218,18 +220,22 @@ def market_data():
 
 def detect(cfg, api_key, now_utc):
     lanes_mode = (os.environ.get("LANES") or "").strip()
-    if lanes_mode not in ("all", "open"):
+    if lanes_mode not in ("all", "open", "hot"):
         lanes_mode = "all" if now_utc.astimezone(MYT).hour < cfg.get("handle_lanes_before_hour_myt", 10) else "open"
-    lanes = [l for l in cfg["lanes"] if lanes_mode == "all" or not l.get("handles") or l.get("every_run")]
+    if lanes_mode == "hot":
+        lanes = [l for l in cfg["lanes"] if l.get("kind") == "hot_posts"]
+    else:
+        lanes = [l for l in cfg["lanes"] if lanes_mode == "all" or not l.get("handles") or l.get("every_run")]
 
     prev = last_brief_time()
     open_since = max(prev or now_utc - dt.timedelta(hours=12), now_utc - dt.timedelta(hours=cfg["max_window_hours"]))
     handle_since = now_utc - dt.timedelta(hours=24)
 
     def run(lane):
-        if lane.get("kind") == "reply_targets":
-            since = now_utc - dt.timedelta(hours=lane.get("window_hours", 3))
-            prompt = REPLY_TARGETS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"])
+        if lane.get("kind") == "hot_posts":
+            since = now_utc - dt.timedelta(hours=lane.get("window_hours", 12))
+            prompt = HOT_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
+                                             keywords=", ".join(lane.get("keywords", [])))
         else:
             since = open_since if (not lane.get("handles") or lane.get("every_run")) else handle_since
             prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],

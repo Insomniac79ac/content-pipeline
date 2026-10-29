@@ -60,9 +60,10 @@ lanes:
 
   - name: open / accountability + markets
     focus: >-
-      KOLs dumping on followers, projects dumping tokens or going quiet, airdrop and TGE drama, unprofessional
-      team behaviour, Strategy and other treasury companies buying or selling, macro catalysts hitting crypto,
-      BTC/ETH/SOL positioning and flows
+      grifters and extractors: KOLs and influencers dumping on followers, token launches that blew up or rugged,
+      leaked keys, insiders/bundles sniping launches, launchpads extracting fees (pump.fun style), projects dumping
+      tokens or going quiet, airdrop and TGE drama, unprofessional team behaviour, Strategy and other treasury
+      companies buying or selling, macro catalysts hitting crypto, BTC/ETH/SOL positioning and flows
     handles: []
 
   - name: open / one piece tcg
@@ -71,11 +72,16 @@ lanes:
       grading/slabbing, scalpers and live-rip sellers, tournament meta shifts, onchain TCG gacha
     handles: []
 
-  # reply targets: fresh posts from bigger accounts to reply to for visibility
-  - name: reply targets
-    kind: reply_targets
-    window_hours: 6
-    focus: >-
-      One Piece TCG, crypto security and scams, crosschain/bridging, KOL and project accountability,
-      BTC/ETH/SOL markets, onchain options
-    handles: []
+  # hot posts: the most-viewed posts right now in the account's topics. top ones get quote drafts,
+  # the rest become the reply-target list
+  - name: hot / crypto drama + scams + exploits
+    kind: hot_posts
+    window_hours: 12
+    focus: crypto drama, grifters, rugs, token launch blowups, leaked private keys, KOL callouts, exploits and hacks, scams spreading, exchange incidents
+    keywords: [rug, rugged, scam, grifter, exploit, hacked, drained, private key, leaked, insider, bundle, dumped, KOL, exit liquidity, extract, phishing, compromised]
+
+  - name: hot / one piece tcg + markets + onchain options
+    kind: hot_posts
+    window_hours: 12
+    focus: One Piece TCG leaks, prices, Bandai and scalper drama; big BTC/ETH/SOL moves and the posts everyone is reacting to; onchain options (Derive, Rysk, Thetanuts, Odette)
+    keywords: [One Piece TCG, OPTCG, Bandai, scalper, Whatnot, live rip, BTC, ETH, SOL, liquidations, options, 0DTE, Derive, Rysk]
