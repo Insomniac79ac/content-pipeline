@@ -274,7 +274,9 @@ def detect(cfg, api_key, now_utc):
             since = open_since if (not lane.get("handles") or lane.get("every_run")) else handle_since
             prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
                                           focus=lane["focus"], n=lane.get("items", 5), fmt=ITEM_FORMAT)
-        res = xai(cfg["model"], prompt, x_tool(since, now_utc, lane.get("handles")), api_key, lane["name"])
+        # hot handle lanes filter with from: operators in the prompt; the allowed_x_handles filter returned nothing there
+        handles = None if lane.get("kind") == "hot_posts" else lane.get("handles")
+        res = xai(cfg["model"], prompt, x_tool(since, now_utc, handles), api_key, lane["name"])
         return lane, since, res
 
     with ThreadPoolExecutor(max_workers=4) as pool:
