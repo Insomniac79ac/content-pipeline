@@ -76,6 +76,13 @@ format for each, most attention first:
 
 reply "nothing found" only if nothing in these areas got real attention."""
 
+OWN_POSTS_PROMPT = """search from:{handle} in Latest mode and list every post, quote and reply @{handle} published since {since} (UTC).
+for each: the url, the time, what it's about in one line, and for quotes/replies the account and post it responds to.
+format:
+- <YYYY-MM-DD HH:MM> UTC | <post|quote|reply> | <url> | re: <@account or none> | <one line on what it says>
+reply "nothing found" if there are none."""
+
+
 HOT_HANDLES_PROMPT = """find the posts getting the most attention from these accounts since {since} (UTC).
 
 important: these accounts post a lot, so do NOT just read their latest posts. run one keyword search per account
@@ -260,7 +267,10 @@ def detect(cfg, api_key, now_utc):
     handle_since = now_utc - dt.timedelta(hours=24)
 
     def run(lane):
-        if lane.get("kind") == "hot_posts":
+        if lane.get("kind") == "own_posts":
+            since = now_utc - dt.timedelta(hours=lane.get("window_hours", 24))
+            prompt = OWN_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), handle=lane["handles"][0])
+        elif lane.get("kind") == "hot_posts":
             since = now_utc - dt.timedelta(hours=lane.get("window_hours", 12))
             if lane.get("handles"):
                 queries = "\n".join(f"- from:{h} min_faves:{lane.get('min_faves', 50)} since:{since:%Y-%m-%d} (Top mode)"

@@ -85,6 +85,7 @@ lanes:
     kind: hot_posts
     every_run: true
     window_hours: 16
+    min_faves: 20
     focus: exploits, hacks, drains, phishing waves, compromised wallets or exchanges, scam alerts
     handles: [PeckShieldAlert, CyversAlerts, SlowMist_Team, Scam_Sniffer, zachxbt, SEAL_911, DarkWebInformer, SpecterAnalyst, dethective, tayvano_]
 
@@ -93,3 +94,11 @@ lanes:
     window_hours: 12
     focus: One Piece TCG leaks, prices, Bandai and scalper drama; big BTC/ETH/SOL moves and the posts everyone is reacting to; onchain options (Derive, Rysk, Thetanuts, Odette)
     keywords: [One Piece TCG, OPTCG, Bandai, scalper, Whatnot, live rip, BTC, ETH, SOL, liquidations, options, 0DTE, Derive, Rysk]
+
+  # the account's own recent posts, so drafts don't repeat what the human already posted himself
+  - name: own recent posts
+    kind: own_posts
+    every_run: true
+    window_hours: 24
+    focus: everything @insomniac988 posted
+    handles: [insomniac988]

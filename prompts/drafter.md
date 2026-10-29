@@ -54,7 +54,7 @@ Morning run: rewrite `ledger/learnings.md` as at most 20 short bullets, only fro
 
 ## 3. pick
 ### 3a. hot posts (do these first)
-From the brief's `hot /` lanes, pick the top 1 or 2 posts that fit the account's topics and that the human would want to react to (a villain, an outrage, a leak, a blowup, an exploit, an OP TCG scandal). Each gets a **quote-post draft** (see step 7). Prefer the most viewed and freshest. Skip anything already covered in the ledger.
+From the brief's `hot /` lanes, pick the top 1 or 2 posts that fit the account's topics and that the human would want to react to (a villain, an outrage, a leak, a blowup, an exploit, an OP TCG scandal). Each gets a **quote-post draft** (see step 7). Prefer the most viewed and freshest. Skip anything already covered in the ledger, and anything the human already posted, quoted or replied to himself (the brief's `own recent posts` lane).
 
 ### 3b. up to 3 post stories
 Rank by:
@@ -70,6 +70,7 @@ Mix rules:
 - product posts (Thetanuts / Odette / ZendFi): max 1 per day, only when a story connects naturally; check today's ledger before adding another
 - sunday morning run: if there's enough to say, one post is the weekly one piece tcg note
 - dedupe: list the 50 most recent Typefully drafts for social set 352870 and check `ledger/drafts.jsonl`. skip anything covered in the last 14 days unless there's a material new development
+- also skip any story the human already posted about himself (`own recent posts` lane in the brief)
 - fewer than 3 is fine. never pad
 
 ## 4. research (the picked stories and hot posts)
