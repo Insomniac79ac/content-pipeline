@@ -1,8 +1,7 @@
-# reply targets 2026-10-28 17:05 MYT
+# reply targets 2026-10-29 10:13 MYT
 
-1. security | @cz_binance (~12.9M) | 4.3h old | 1863/347/403
-   https://x.com/cz_binance/status/2115304943934672928
-   4 data leaks in one day (Coinbase vendor Amplitude, Bithumb, Mirae, Daishin) | why: huge reach, still climbing, you have a sharp take on leaked data feeding phishing
-2. onchain options | @DeriveXYZ (~108k) | 0.7h old | 16/0/17
-   https://x.com/DeriveXYZ/status/2115359325816549513
-   BTC vol fairly priced ahead of FOMC, market expects ±2% move, spreads may beat outright options | why: official account, fresh, squarely your options lane
+1. onchain options | @DeriveXYZ (official) | 1h old | 15/1/1
+   https://x.com/DeriveXYZ/status/2115611107213885528
+   Derive x Kinetiq "Road to Expiry" HYPE options contest for the 13 Nov expiry, ~$40k kHYPE prize pool | why: fresh official post in onchain options, room for a knowledgeable take on trading comps and options volume
+
+only 1 target passed the filters this run. the scout's reply lane found nothing since 04:00 MYT. dropped: @OPMerchandise OP18 leak (follower count unknown), @AltcoinSherpa BTC chop (over 6h old), @CryptoKaleo (memecoin), @sentdefender Iran (macro, follower count unknown)
