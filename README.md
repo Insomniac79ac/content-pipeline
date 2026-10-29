@@ -4,12 +4,12 @@ Scans narratives, researches the best stories, drafts posts, lists reply targets
 
 ## flow
 A Claude scheduled task runs at ~10am and ~5pm MYT and follows `prompts/drafter.md`:
-1. **detect**: dispatches the `scout` workflow (Grok). open X searches every run; your X list (handle lanes) on the morning run only. writes `briefs/`
+1. **detect**: dispatches the `scout` workflow (Grok). open X searches, hot-post searches and your own recent posts (for dedupe) every run; your X list (handle lanes) on the morning run only. writes `briefs/`
 2. **learn**: checks which earlier drafts you posted, edited, ignored or deleted (`ledger/`)
-3. **pick**: up to 3 post stories
+3. **pick**: 1 to 2 hot posts (most-viewed posts in your topics, from drama/news/security amplifier accounts) for quote drafts, plus up to 3 post stories
 4. **research**: dispatches `scout` in research mode for the 3 stories (Grok X deep dive + DefiLlama), plus its own web search for primary sources. writes `research/`
 5. **write + save**: drafts to Typefully, unscheduled, tagged `needs-review`
-6. **reply targets**: 5 to 8 fresh posts to reply to, in the run summary and `replies/latest.md`
+6. **reply targets**: the other hot posts, in the run summary (sent to phone + email) and `replies/latest.md`
 
 You review, edit and schedule in Typefully.
 
