@@ -34,3 +34,4 @@ generated_at_utc,kind,cost_usd,x_search_calls,ok
 2026-10-29T09:13:22+00:00,detect-hot,0.4249,12,2/2
 2026-10-29T09:14:54+00:00,detect-hot,0.3821,20,2/2
 2026-10-29T09:16:18+00:00,detect-hot,0.2933,10,2/2
+2026-10-29T09:17:44+00:00,detect-hot,0.1760,6,3/3
