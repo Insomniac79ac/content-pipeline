@@ -258,7 +258,10 @@ def detect(cfg, api_key, now_utc):
         if lane.get("kind") == "hot_posts":
             since = now_utc - dt.timedelta(hours=lane.get("window_hours", 12))
             if lane.get("handles"):
-                prompt = HOT_HANDLES_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"])
+                # same prompt shape as the regular lanes (proven to return results), ranked by attention
+                prompt = DETECT_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), name=lane["name"],
+                                              focus=lane["focus"] + ". rank by attention: views, likes, replies, quotes",
+                                              n=8, fmt=ITEM_FORMAT)
             else:
                 prompt = HOT_POSTS_PROMPT.format(since=since.strftime("%Y-%m-%d %H:%M"), focus=lane["focus"],
                                                  keywords=", ".join(lane.get("keywords", [])))
