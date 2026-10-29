@@ -76,9 +76,9 @@ lanes:
   # the rest become the reply-target list
   - name: hot / crypto drama + scams + exploits
     kind: hot_posts
-    window_hours: 12
+    window_hours: 16
     focus: crypto drama, grifters, rugs, token launch blowups, leaked private keys, KOL callouts, exploits and hacks, scams spreading, exchange incidents
-    keywords: [rug, rugged, scam, grifter, exploit, hacked, drained, private key, leaked, insider, bundle, dumped, KOL, exit liquidity, extract, phishing, compromised]
+    keywords: [rug, rugged, scam, scammer, grifter, exploit, exploited, hacked, drained, private key, leaked, insider, bundled, dumped, KOL, influencer, exit liquidity, token launch, launched a token, phishing, compromised, arrested]
 
   - name: hot / one piece tcg + markets + onchain options
     kind: hot_posts

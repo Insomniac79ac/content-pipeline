@@ -54,9 +54,13 @@ reply "nothing found" only if the search returned zero relevant posts in the win
 
 HOT_POSTS_PROMPT = """find the most-viewed X posts published after {since} (UTC) on these topics: {focus}
 
-run several separate searches, one per keyword group, using these keywords: {keywords}
-sort what you find by views and engagement. we want posts that are blowing up right now: roughly 20k+ views,
-or 200+ likes, or a big account (50k+ followers) with replies climbing. include video and clip posts.
+run several separate keyword searches (at least 4), each combining a few of these keywords with X search operators
+to surface high-traction posts, for example: (rug OR rugged OR scam) min_faves:100 -filter:replies
+keywords: {keywords}
+also run one search for the topic in general with min_faves:300.
+we want posts that are blowing up: roughly 10k+ views or 100+ likes, or a big account (50k+ followers) with replies
+climbing. include video and clip posts and posts about a person or influencer behaving badly.
+sort what you find by views and engagement.
 skip giveaways, memecoin shills, paid promos, and engagement farming.
 
 return up to 8, most viewed first, exactly in this format:
