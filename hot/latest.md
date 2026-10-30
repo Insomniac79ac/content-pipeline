@@ -203,3 +203,18 @@ so you can send money in, you just can't take it out 😅
 
 2 more days of ppl watching the market dump with their funds stuck on the exchange
 ```
+
+## 2026-10-30 15:09 MYT
+```
+HOT: 12 platforms hacked in one week, not just Binance
+https://x.com/Cointelegraph/status/2116032514745655798
+@Cointelegraph (~2.9M followers) | 2.1h old | 29k views, 101 likes
+why: fresh security angle off the Binance story, since the DefiLlama tally shows X100 ($4.75M), Polymarket ($2.7M), Initia ($2.6M), zkLink Nova and Predict.fun all got hit the same week, and it fits your "ending rektober with a bang" post (44 replies already)
+
+suggested quote:
+binance takes all the headlines but 11 other platforms got hacked this week too, including polymarket
+
+rektober really is living up to its name 😅
+
+no final hardened state. if you're building, start hacking your own shit before someone else does
+```
