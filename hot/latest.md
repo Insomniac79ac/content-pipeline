@@ -29,3 +29,18 @@ my guess is they're happy to buy what the panic sellers dumped after the fed
 
 just remember Strategy was the poster child too... until they had to start selling
 ```
+
+## 2026-10-30 08:09 MYT
+```
+HOT: Bitcoin falls under $78k after the Binance hack
+https://x.com/WatcherGuru/status/2115954018954702942
+@WatcherGuru (~4.9M followers) | 0.4h old | 82k views, 634 likes
+why: BTC is the market story now, with liquidations over $1.1B in 24h (per @coinbureau) and the Binance hacker still holding ~18k BTC unsold (per @solidintel_x)
+
+suggested quote:
+BTC just lost 78k and longs are getting wiped again
+
+the binance hacker still has ~18k BTC sitting untouched across 19 wallets 👀
+
+if that starts moving it could get a lot uglier. not the day to be on high leverage
+```
