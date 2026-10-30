@@ -115,3 +115,46 @@ one laptop had enough access to drain the hot wallets. how tf does that happen a
 
 there's no final hardened state. every other exchange should be checking who has that kind of access right now
 ```
+
+## 2026-10-30 12:02 MYT
+```
+HOT: Logan Paul calls crypto a scam after the Binance hack
+https://x.com/DegenerateNews/status/2115980968389378525
+@DegenerateNews (~425k followers) | 2.4h old | 41k views, 215 likes
+why: clear villain for your accountability lane, since the CryptoZoo guy is now telling his audience crypto is a scam, with 64 replies and 20 quotes piling on
+
+suggested quote:
+the guy who sold ppl CryptoZoo eggs is now on stream telling everyone crypto is a scam 😂
+
+he'd know i guess
+```
+
+## 2026-10-30 12:02 MYT
+```
+HOT: Elon Musk says AI agents will hack financial systems for themselves
+https://x.com/WatcherGuru/status/2116008167716839712
+@WatcherGuru (~4.9M followers) | 0.6h old | 146k views, 1,832 likes
+why: fastest-moving post on the TL right now (213 replies in ~35 min), and @Cointelegraph frames it as Elon comparing it to the Binance hacker, which gives you a security angle off a huge post
+
+suggested quote:
+elon is worried about super intelligent AI agents hacking financial systems one day
+
+meanwhile binance says the biggest hack ever likely started with one engineer's laptop
+
+you don't need super intelligence when humans are this sloppy
+```
+
+## 2026-10-30 12:02 MYT
+```
+HOT: OKX CEO calls the Binance hack a wake-up call for exchanges
+https://x.com/Cointelegraph/status/2115990635068916013
+@Cointelegraph (~2.9M followers) | 1.8h old | 30k views, 324 likes
+why: a rival CEO weighing in on the hack with "security is everyone's responsibility", which is an easy opening for your "no final hardened state" take
+
+suggested quote:
+.@okx CEO wants exchange CEOs to unite on shared security standards after the binance hack
+
+nice words, but i'd rather see each of them publish how many ppl can actually move funds out of their hot wallets
+
+my guess is nobody volunteers first
+```

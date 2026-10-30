@@ -7,3 +7,6 @@
 - 2026-10-30 10:07 MYT | https://x.com/lookonchain/status/2115972257864687976 | Binance hacker dumps UNI, ENA, PEPE, LINK, AAVE and more for ~70k ETH
 - 2026-10-30 10:07 MYT | https://x.com/lookonchain/status/2115974008969851294 | Machi liquidated 8 times in 6 hours, down to $1.50
 - 2026-10-30 11:05 MYT | https://x.com/Cointelegraph/status/2115995681433264481 | Binance says the $6.3B hack likely came from a compromised DevOps engineer's laptop
+- 2026-10-30 12:02 MYT | https://x.com/DegenerateNews/status/2115980968389378525 | Logan Paul calls crypto a scam on stream after the Binance hack
+- 2026-10-30 12:02 MYT | https://x.com/WatcherGuru/status/2116008167716839712 | Elon Musk says superintelligent AI agents will hack financial systems for themselves
+- 2026-10-30 12:02 MYT | https://x.com/Cointelegraph/status/2115990635068916013 | OKX CEO calls the Binance hack a wake-up call and urges shared exchange security standards
