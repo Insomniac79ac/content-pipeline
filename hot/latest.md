@@ -1,20 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-29 23:07 MYT
-```
-HOT: Dubai royal-backed firm launches $1.5B Bitcoin strategy
-https://x.com/WatcherGuru/status/2115819921016021118
-@WatcherGuru (~4.9M followers) | 0.2h old | 73k views, 457 likes
-why: new treasury-company BTC buyer, already 73k views in ~12 minutes, landing the same day BTC dipped under 80k after the Fed hold
-
-suggested quote:
-Dubai royals launching a $1.5b bitcoin strategy the same day BTC dipped under 80k
-
-my guess is they're happy to buy what the panic sellers dumped after the fed
-
-just remember Strategy was the poster child too... until they had to start selling
-```
-
 ## 2026-10-30 08:09 MYT
 ```
 HOT: Bitcoin falls under $78k after the Binance hack
@@ -382,4 +367,19 @@ CZ says bitcoin held up better than traditional markets today
 sure, but the reason it dumped in the first place is your exchange getting robbed for $6.3b
 
 ppl still can't withdraw from binance and he's out here doing a victory lap
+```
+
+## 2026-10-30 23:06 MYT
+```
+HOT: 322 crypto hacks in 2026, double last year
+https://x.com/Cointelegraph/status/2116153500086211050
+@Cointelegraph (~2.9M followers) | 2.1h old | 29k views, 75 likes
+why: zooms out from the Binance hack to the whole year, with DefiLlama counting 322 confirmed hacks so far in 2026, more than twice all of last year with two months still left (55 replies), and it lines up with your pen-testing replies tonight
+
+suggested quote:
+322 confirmed hacks in 2026 and we still have two months to go
+
+that's more than double all of last year, per @DefiLlama
+
+and most teams still think one audit before launch is enough 🥲
 ```

@@ -26,3 +26,4 @@
 - 2026-10-30 21:03 MYT | https://x.com/Cointelegraph/status/2116134422961398257 | Blockaid CEO says EIP-7702 may have helped the Binance attackers bypass security checks
 - 2026-10-30 22:06 MYT | https://x.com/lookonchain/status/2116159431679570229 | Binance hacker accidentally sends ~$3.32M of altcoins to the NEWT token contract, funds now unrecoverable
 - 2026-10-30 22:06 MYT | https://x.com/Cointelegraph/status/2116141997484302468 | CZ praises Bitcoin's resilience vs traditional markets a day after the $6.3B Binance hack
+- 2026-10-30 23:06 MYT | https://x.com/Cointelegraph/status/2116153500086211050 | DefiLlama counts 322 confirmed crypto hacks in 2026, more than double last year with two months left
