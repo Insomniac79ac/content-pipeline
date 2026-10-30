@@ -218,3 +218,33 @@ rektober really is living up to its name 😅
 
 no final hardened state. if you're building, start hacking your own shit before someone else does
 ```
+
+## 2026-10-30 17:01 MYT
+```
+HOT: Richard Teng says the Binance hack went beyond one engineer
+https://x.com/Cointelegraph/status/2116079066042204585
+@Cointelegraph (~2.9M followers) | 1.0h old | 29k views, 197 likes
+why: walks back the "one compromised DevOps laptop" story from this morning, and @solidintel_x reports Binance has now found additional points of breach, so the security picture is worse than first said (44 replies already)
+
+suggested quote:
+this morning it was one engineer's compromised laptop
+
+now .@binance says the attack went beyond one engineer's permissions and there were more points of breach
+
+my guess is we still haven't heard the full story on how .3b walked out the door
+```
+
+## 2026-10-30 17:01 MYT
+```
+HOT: Whale banks $20M on BTC and ETH longs, flips to a 20x ETH short
+https://x.com/lookonchain/status/2116076166188773626
+@lookonchain (~712k followers) | 1.2h old | 34k views, 122 likes
+why: ETH positioning angle on the hack selloff, with a 4-month holder closing 1,000 BTC and 10,000 ETH longs for over $20M profit and then opening a 20x short on 13,000 ETH (~$29M), 42 replies
+
+suggested quote:
+this guy held 1,000 BTC and 10,000 ETH longs for 4 months, closed with over $20M profit and immediately flipped to a 20x short on ETH 👀
+
+either he knows something or he's about to give a chunk of it back
+
+20x on ETH in this market is brave af
+```

@@ -14,3 +14,5 @@
 - 2026-10-30 13:05 MYT | https://x.com/lookonchain/status/2116011854615241163 | 9 fresh wallets pull 1,900 BTC (~$148M) from Galaxy Digital during the selloff
 - 2026-10-30 14:05 MYT | https://x.com/Cointelegraph/status/2116026022684414166 | Binance withdrawals stay frozen up to 48 more hours, says Yi He
 - 2026-10-30 15:09 MYT | https://x.com/Cointelegraph/status/2116032514745655798 | 12 crypto platforms hacked in the past week per DefiLlama, Binance plus Polymarket, Initia, zkLink Nova and more
+- 2026-10-30 17:01 MYT | https://x.com/Cointelegraph/status/2116079066042204585 | Richard Teng says the Binance hack went beyond one engineer's permissions and wasn't a one-click action
+- 2026-10-30 17:01 MYT | https://x.com/lookonchain/status/2116076166188773626 | Trader 0x15a4 closes BTC/ETH longs for $20M+ profit and flips to a 20x short on 13,000 ETH
