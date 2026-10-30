@@ -199,7 +199,7 @@ why: fresh user-impact angle you haven't covered, since Yi He says deposits work
 suggested quote:
 .@binance co-founder Yi He says deposits are working but withdrawals should only be back within the next 48 hours
 
-so you can send money in, you just can't take it out 🙄
+so you can send money in, you just can't take it out 😅
 
 2 more days of ppl watching the market dump with their funds stuck on the exchange
 ```
