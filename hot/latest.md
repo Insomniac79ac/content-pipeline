@@ -278,3 +278,18 @@ longs got wiped all day yesterday so someone figured shorting the bottom was fre
 
 leverage doesn't care which side you're on
 ```
+
+## 2026-10-30 19:08 MYT
+```
+HOT: Malicious Claude Code extension hits up to 5,000 Cursor users
+https://x.com/Cointelegraph/status/2116115568440783154
+@Cointelegraph (~2.9M followers) | 0.7h old | 23k views, 39 likes
+why: supply-chain security alert where ppl may need to act, since Cursor says a fake Claude Code VS Code extension (not made by Anthropic) may have affected up to 5,000 users, and it's at 23k views in under 40 minutes
+
+suggested quote:
+cursor says a malicious claude code extension may have hit up to 5,000 users
+
+not made by anthropic, just someone riding the name
+
+if you installed a claude code extension recently, go check where it came from
+```
