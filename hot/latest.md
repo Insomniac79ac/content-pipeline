@@ -383,3 +383,33 @@ that's more than double all of last year, per @DefiLlama
 
 and most teams still think one audit before launch is enough 🥲
 ```
+
+## 2026-10-31 00:09 MYT
+```
+HOT: US Secret Service and Circle move to freeze the Binance hack funds
+https://x.com/WatcherGuru/status/2116195704335212981
+@WatcherGuru (~4.9M followers) | 0.3h old | 104k views, 1,264 likes
+why: new recovery angle on the $6.3b hack, with the Secret Service now working with Circle to identify, freeze and recover the stolen funds, and Cointelegraph saying ~$3B is already frozen (107 replies in 20 min)
+
+suggested quote:
+the US Secret Service is now working with .@circle to find and freeze the funds stolen from binance
+
+stablecoins are the easy part to claw back
+
+my guess is whatever already got swapped into BTC and ETH is gone for good
+```
+
+## 2026-10-31 00:09 MYT
+```
+HOT: Bitcoin Core discloses a bug that could let miners crash other nodes
+https://x.com/Cointelegraph/status/2116191103816749190
+@Cointelegraph (~2.9M followers) | 0.6h old | 23k views, 74 likes
+why: security angle on BTC itself while everyone is focused on Binance, since Bitcoin Core says a low-severity bug could let miners corrupt other nodes' undo data and trigger shutdowns under extreme conditions (28 replies)
+
+suggested quote:
+bitcoin core just disclosed a bug that could let miners corrupt other nodes' data and shut them down
+
+low severity and only under extreme conditions, but still
+
+no final hardened state. not even for bitcoin
+```
