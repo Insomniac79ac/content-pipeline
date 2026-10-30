@@ -100,3 +100,18 @@ Machi got liquidated 8 times in 6 hours and woke up to $1.50 in his hyperliquid 
 
 at some point you have to ask yourself why you keep going back in with leverage
 ```
+
+## 2026-10-30 11:05 MYT
+```
+HOT: Binance says the $6.3B hack started with a compromised DevOps laptop
+https://x.com/Cointelegraph/status/2115995681433264481
+@Cointelegraph (~2.9M followers) | 0.5h old | 24k views, 150 likes
+why: first word from Binance on how it happened, and it's a security angle you haven't covered yet (one engineer's laptop, no private key leak), with @WatcherGuru's "$6.3B impacted" post at 75k views in 15 minutes
+
+suggested quote:
+.@binance says the $6.3b hack likely started with a compromised DevOps engineer's laptop
+
+one laptop had enough access to drain the hot wallets. how tf does that happen at the biggest exchange in the world?
+
+there's no final hardened state. every other exchange should be checking who has that kind of access right now
+```

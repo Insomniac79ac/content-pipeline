@@ -6,3 +6,4 @@
 - 2026-10-30 10:07 MYT | https://x.com/WatcherGuru/status/2115966821350137971 | Binance says it will cover all losses from the hack
 - 2026-10-30 10:07 MYT | https://x.com/lookonchain/status/2115972257864687976 | Binance hacker dumps UNI, ENA, PEPE, LINK, AAVE and more for ~70k ETH
 - 2026-10-30 10:07 MYT | https://x.com/lookonchain/status/2115974008969851294 | Machi liquidated 8 times in 6 hours, down to $1.50
+- 2026-10-30 11:05 MYT | https://x.com/Cointelegraph/status/2115995681433264481 | Binance says the $6.3B hack likely came from a compromised DevOps engineer's laptop
