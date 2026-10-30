@@ -19,3 +19,5 @@
 - 2026-10-30 18:09 MYT | https://x.com/BitcoinNewsCom/status/2116077113614967092 | Trezor warns of a suspected hardware implant in a Safe 5 sold by reseller CryptoBilis, tells buyers to move funds
 - 2026-10-30 18:09 MYT | https://x.com/lookonchain/status/2116069454203461891 | 174.86 BTC (~$13.74M) short liquidated as BTC rebounded
 - 2026-10-30 19:08 MYT | https://x.com/Cointelegraph/status/2116115568440783154 | Cursor reports a malicious Claude Code VS Code extension that may have hit up to 5,000 users
+- 2026-10-30 20:10 MYT | https://x.com/WatcherGuru/status/2116130504273703358 | Binance says it is working with the FBI and US Secret Service on the $6.3B hack
+- 2026-10-30 20:10 MYT | https://x.com/WatcherGuru/status/2116125992020537776 | Binance reserves $6.34B of company funds to cover hack losses, $5B already held in the stolen tokens

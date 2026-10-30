@@ -293,3 +293,33 @@ not made by anthropic, just someone riding the name
 
 if you installed a claude code extension recently, go check where it came from
 ```
+
+## 2026-10-30 20:10 MYT
+```
+HOT: Binance brings in the FBI and US Secret Service
+https://x.com/WatcherGuru/status/2116130504273703358
+@WatcherGuru (~4.9M followers) | 0.7h old | 135k views, 1,327 likes
+why: new angle on the hack with US law enforcement now involved, while @DegenerateNews reports Chainalysis has "a high degree of confidence that DPRK is responsible" (181 replies already)
+
+suggested quote:
+.@binance is now working with the FBI and US Secret Service on the $6.3b hack
+
+if it's DPRK again like chainalysis thinks, good luck getting anything back from them
+
+my guess is the ~$3b already frozen is all that ever comes back
+```
+
+## 2026-10-30 20:10 MYT
+```
+HOT: Binance sets aside $6.34B of its own money to cover the hack
+https://x.com/WatcherGuru/status/2116125992020537776
+@WatcherGuru (~4.9M followers) | 1.0h old | 210k views, 2,409 likes
+why: puts real numbers on the "we'll cover all losses" promise from this morning, with $5B already held in the exact stolen tokens and the other $1.34B being bought on market and OTC, and it's the biggest post on the TL this hour
+
+suggested quote:
+.@binance just put aside $6.34b of company funds to cover the hack
+
+$5b was already sitting in the exact tokens that got stolen. the other $1.34b they're buying on market and OTC
+
+most exchanges would be FTX'd after a hole this size. binance just writes a check 👀
+```
