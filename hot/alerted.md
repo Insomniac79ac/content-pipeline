@@ -10,3 +10,5 @@
 - 2026-10-30 12:02 MYT | https://x.com/DegenerateNews/status/2115980968389378525 | Logan Paul calls crypto a scam on stream after the Binance hack
 - 2026-10-30 12:02 MYT | https://x.com/WatcherGuru/status/2116008167716839712 | Elon Musk says superintelligent AI agents will hack financial systems for themselves
 - 2026-10-30 12:02 MYT | https://x.com/Cointelegraph/status/2115990635068916013 | OKX CEO calls the Binance hack a wake-up call and urges shared exchange security standards
+- 2026-10-30 13:05 MYT | https://x.com/zachxbt/status/2116030284261179538 | ZachXBT links the Binance hack to the Bitget exploit, likely the same DPRK-linked actor
+- 2026-10-30 13:05 MYT | https://x.com/lookonchain/status/2116011854615241163 | 9 fresh wallets pull 1,900 BTC (~$148M) from Galaxy Digital during the selloff

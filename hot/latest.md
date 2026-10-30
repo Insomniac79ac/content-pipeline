@@ -158,3 +158,33 @@ nice words, but i'd rather see each of them publish how many ppl can actually mo
 
 my guess is nobody volunteers first
 ```
+
+## 2026-10-30 13:05 MYT
+```
+HOT: ZachXBT ties the Binance hack to the Bitget exploit
+https://x.com/zachxbt/status/2116030284261179538
+@zachxbt (~1.1M followers) | 0.2h old | 9.4k views, 168 likes
+why: new attribution angle on the hack, since stolen funds from the $6.3B Binance exploit and the $388M Bitget exploit were commingled at the same address after coming through THORChain, and the Bitget one was pinned on DPRK-linked hackers (23 replies and 14 quotes in ~15 min)
+
+suggested quote:
+funds from the binance hack and the $388M bitget exploit just landed in the same address via THORChain
+
+if zach is right and it's DPRK again, that's two exchanges popped by the same crew
+
+and THORChain is still their go-to laundromat 🙄
+```
+
+## 2026-10-30 13:05 MYT
+```
+HOT: Galaxy sends 1,900 BTC to 9 fresh wallets during the selloff
+https://x.com/lookonchain/status/2116011854615241163
+@lookonchain (~712k followers) | 1.5h old | 34k views, 204 likes
+why: counter-signal to the liquidation cascade, with BTC under $77k and ~$1.5B liquidated in 24h while ~$148M of BTC moves out of Galaxy to newly created wallets
+
+suggested quote:
+BTC bleeding, longs getting wiped and someone just pulled 1,900 BTC (~$148M) out of galaxy into 9 fresh wallets
+
+retail panic sells into the hack news while big money quietly scoops it up
+
+same story every time
+```
