@@ -21,3 +21,6 @@
 - 2026-10-30 19:08 MYT | https://x.com/Cointelegraph/status/2116115568440783154 | Cursor reports a malicious Claude Code VS Code extension that may have hit up to 5,000 users
 - 2026-10-30 20:10 MYT | https://x.com/WatcherGuru/status/2116130504273703358 | Binance says it is working with the FBI and US Secret Service on the $6.3B hack
 - 2026-10-30 20:10 MYT | https://x.com/WatcherGuru/status/2116125992020537776 | Binance reserves $6.34B of company funds to cover hack losses, $5B already held in the stolen tokens
+- 2026-10-30 21:03 MYT | https://x.com/coinbureau/status/2116134188390978036 | Chainalysis sees never-before-seen bot-like laundering of the Binance hack funds
+- 2026-10-30 21:03 MYT | https://x.com/DegenerateNews/status/2116132543967699128 | Synthetix recovers the SNX stolen in the Binance hack, will return it on request
+- 2026-10-30 21:03 MYT | https://x.com/Cointelegraph/status/2116134422961398257 | Blockaid CEO says EIP-7702 may have helped the Binance attackers bypass security checks

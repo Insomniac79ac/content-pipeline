@@ -1,20 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-29 21:01 MYT
-```
-HOT: NYSE owner ICE bringing Hyperliquid perps to the US
-https://x.com/WatcherGuru/status/2115756646949650901
-@WatcherGuru (~4.9M followers) | 2.3h old | 301k views, 3,073 likes
-why: biggest market story on the TL tonight, $HYPE up ~10%, and ICE was pushing US regulators to scrutinize Hyperliquid back in May (per @DegenerateNews), so there's a clear hypocrisy angle
-
-suggested quote:
-in may ICE was pushing US regulators to look into Hyperliquid for market manipulation and sanctions evasion
-
-now they're taking a stake and want to be the exclusive operator of its US market 😂
-
-guess the concerns went away once they got a cut
-```
-
 ## 2026-10-29 23:07 MYT
 ```
 HOT: Dubai royal-backed firm launches $1.5B Bitcoin strategy
@@ -322,4 +307,49 @@ suggested quote:
 $5b was already sitting in the exact tokens that got stolen. the other $1.34b they're buying on market and OTC
 
 most exchanges would be FTX'd after a hole this size. binance just writes a check 👀
+```
+
+## 2026-10-30 21:03 MYT
+```
+HOT: Chainalysis sees never-before-seen laundering of the Binance hack
+https://x.com/coinbureau/status/2116134188390978036
+@coinbureau (~1.1M followers) | 1.3h old | 42k views, 359 likes
+why: new angle on the hack, since Chainalysis says the bot-like laundering patterns are something it has never seen before, with thousands of transactions circling between wallets in a short window (49 replies)
+
+suggested quote:
+chainalysis says the binance hack funds are being laundered in patterns they've never seen before
+
+thousands of txs in a short window, funds circling between wallets instead of moving in a straight line
+
+if it's DPRK, they've automated the laundering now. good luck to whoever has to trace this 🥲
+```
+
+## 2026-10-30 21:03 MYT
+```
+HOT: Synthetix recovers the SNX stolen in the Binance hack
+https://x.com/DegenerateNews/status/2116132543967699128
+@DegenerateNews (~425k followers) | 1.4h old | 25k views, 184 likes
+why: a protocol actually clawing funds back from the hacker, with Synthetix saying "fuck kim jong un" and offering to return the SNX on request while Chainalysis points at DPRK (32 replies)
+
+suggested quote:
+.@synthetix recovered the SNX stolen in the binance hack and will send it back "on request"
+
+their statement literally says fuck kim jong un 😂
+
+more teams should move this fast instead of tweeting "we're monitoring the situation"
+```
+
+## 2026-10-30 21:03 MYT
+```
+HOT: Blockaid CEO says EIP-7702 helped the Binance attackers
+https://x.com/Cointelegraph/status/2116134422961398257
+@Cointelegraph (~2.9M followers) | 1.3h old | 27k views, 63 likes
+why: fresh technical security angle you haven't covered, since @blockaid_ CEO Ido Ben-Natan says EIP-7702 didn't cause the hack but may have let attackers bypass security checks and drain funds in one sweep (34 replies)
+
+suggested quote:
+blockaid's CEO says EIP-7702 didn't cause the binance hack but may have helped the attackers skip security checks and drain everything in one sweep
+
+features that make wallets more convenient also make draining them more convenient
+
+no final hardened state. every upgrade is new attack surface
 ```
