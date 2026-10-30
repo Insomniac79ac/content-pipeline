@@ -381,5 +381,5 @@ CZ says bitcoin held up better than traditional markets today
 
 sure, but the reason it dumped in the first place is your exchange getting robbed for $6.3b
 
-ppl still can't withdraw from binance and he's out here doing the victory lap 🙄
+ppl still can't withdraw from binance and he's out here doing a victory lap
 ```
