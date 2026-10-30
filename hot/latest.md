@@ -413,3 +413,33 @@ low severity and only under extreme conditions, but still
 
 no final hardened state. not even for bitcoin
 ```
+
+## 2026-10-31 01:01 MYT
+```
+HOT: CZ calls the Binance hack a "major disaster for the industry"
+https://x.com/WatcherGuru/status/2116201629301248058
+@WatcherGuru (~4.9M followers) | 0.8h old | 142k views, 2,060 likes
+why: CZ's own words on the $6.3b hack, "it hurts, but we survive", and it's the biggest crypto post on the TL right now with 241 replies
+
+suggested quote:
+CZ calls the binance hack a "major disaster for the industry"
+
+no CZ, it was a disaster for YOUR exchange. the industry is just eating the selloff
+
+"it hurts, but we survive" hits different when ppl still can't withdraw
+```
+
+## 2026-10-31 01:01 MYT
+```
+HOT: Saylor says Binance will make customers whole
+https://x.com/Cointelegraph/status/2116194901427663048
+@Cointelegraph (~2.9M followers) | 1.3h old | 30k views, 260 likes
+why: Michael Saylor weighing in on the hack, saying he expects Binance to make customers whole after pledging its balance sheet and calling it a lesson for the industry (40 replies)
+
+suggested quote:
+Michael Saylor says he expects .@binance to make customers whole and calls the hack a lesson for the industry
+
+the lesson is one laptop got $6.3b out the door
+
+my guess is most teams will forget it by next month 🥲
+```

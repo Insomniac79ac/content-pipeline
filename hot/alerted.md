@@ -29,3 +29,5 @@
 - 2026-10-30 23:06 MYT | https://x.com/Cointelegraph/status/2116153500086211050 | DefiLlama counts 322 confirmed crypto hacks in 2026, more than double last year with two months left
 - 2026-10-31 00:09 MYT | https://x.com/WatcherGuru/status/2116195704335212981 | US Secret Service working with Circle to identify, freeze and recover funds stolen from Binance
 - 2026-10-31 00:09 MYT | https://x.com/Cointelegraph/status/2116191103816749190 | Bitcoin Core discloses a low-severity bug letting miners corrupt other nodes' undo data and trigger shutdowns
+- 2026-10-31 01:01 MYT | https://x.com/WatcherGuru/status/2116201629301248058 | CZ calls the $6.3B Binance hack a "major disaster for the industry", says "it hurts, but we survive"
+- 2026-10-31 01:01 MYT | https://x.com/Cointelegraph/status/2116194901427663048 | Michael Saylor says he expects Binance to make customers whole, calls it a lesson for the industry
