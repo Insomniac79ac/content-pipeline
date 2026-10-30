@@ -16,3 +16,5 @@
 - 2026-10-30 15:09 MYT | https://x.com/Cointelegraph/status/2116032514745655798 | 12 crypto platforms hacked in the past week per DefiLlama, Binance plus Polymarket, Initia, zkLink Nova and more
 - 2026-10-30 17:01 MYT | https://x.com/Cointelegraph/status/2116079066042204585 | Richard Teng says the Binance hack went beyond one engineer's permissions and wasn't a one-click action
 - 2026-10-30 17:01 MYT | https://x.com/lookonchain/status/2116076166188773626 | Trader 0x15a4 closes BTC/ETH longs for $20M+ profit and flips to a 20x short on 13,000 ETH
+- 2026-10-30 18:09 MYT | https://x.com/BitcoinNewsCom/status/2116077113614967092 | Trezor warns of a suspected hardware implant in a Safe 5 sold by reseller CryptoBilis, tells buyers to move funds
+- 2026-10-30 18:09 MYT | https://x.com/lookonchain/status/2116069454203461891 | 174.86 BTC (~$13.74M) short liquidated as BTC rebounded

@@ -248,3 +248,33 @@ either he knows something or he's about to give a chunk of it back
 
 20x on ETH in this market is brave af
 ```
+
+## 2026-10-30 18:09 MYT
+```
+HOT: Trezor finds a suspected hardware implant from reseller CryptoBilis
+https://x.com/BitcoinNewsCom/status/2116077113614967092
+@BitcoinNewsCom (~265k followers) | 2.2h old | 20k views, 149 likes
+why: supply-chain tampering where ppl need to act, since anyone who bought a Trezor from CryptoBilis since March is told to move to a new wallet with a new seed, and @SlowMist_Team says it's the same reseller incident that hit the tampered Ledgers
+
+suggested quote:
+first the tampered ledgers, now trezor says a safe 5 sold by the same reseller CryptoBilis may have a hardware implant
+
+if you bought a hardware wallet from them since march, move to a new wallet with a new seed. don't reuse the old one
+
+buy direct from the maker. saving a few bucks with a random reseller can cost you everything
+```
+
+## 2026-10-30 18:09 MYT
+```
+HOT: $13.7M BTC short liquidated on the bounce
+https://x.com/lookonchain/status/2116069454203461891
+@lookonchain (~712k followers) | 2.7h old | 42k views, 162 likes
+why: the other side of the hack selloff, with ~$1.5B mostly longs wiped in 24h and now a 174.86 BTC short getting squeezed as BTC bounced back toward 78.5k (46 replies)
+
+suggested quote:
+longs got wiped all day yesterday so someone figured shorting the bottom was free money
+
+174 BTC (~$13.7M) short just got liquidated on the bounce
+
+leverage doesn't care which side you're on
+```
