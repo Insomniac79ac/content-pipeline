@@ -188,3 +188,18 @@ retail panic sells into the hack news while big money quietly scoops it up
 
 same story every time
 ```
+
+## 2026-10-30 14:05 MYT
+```
+HOT: Binance withdrawals stay frozen for up to 48 more hours
+https://x.com/Cointelegraph/status/2116026022684414166
+@Cointelegraph (~2.9M followers) | 1.5h old | 27k views, 236 likes
+why: fresh user-impact angle you haven't covered, since Yi He says deposits work but withdrawals only resume within 48 hours, so ppl stay stuck on the exchange while BTC sits under 77k and longs keep getting wiped
+
+suggested quote:
+.@binance co-founder Yi He says deposits are working but withdrawals should only be back within the next 48 hours
+
+so you can send money in, you just can't take it out 🙄
+
+2 more days of ppl watching the market dump with their funds stuck on the exchange
+```
