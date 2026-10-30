@@ -353,3 +353,33 @@ features that make wallets more convenient also make draining them more convenie
 
 no final hardened state. every upgrade is new attack surface
 ```
+
+## 2026-10-30 22:06 MYT
+```
+HOT: Binance hacker fat-fingers $3.32M into the NEWT contract
+https://x.com/lookonchain/status/2116159431679570229
+@lookonchain (~712k followers) | 0.7h old | 48k views, 241 likes
+why: the hacker sent ~$3.32M of stolen altcoins straight to the NEWT token contract by mistake, so those funds are gone for good, and it's pulling replies fast (67 in ~40 min)
+
+suggested quote:
+the binance hacker just sent ~$3.32M of stolen altcoins to the NEWT token contract by mistake
+
+funds are now unrecoverable lol
+
+stole $6.3b in 20 minutes and still can't copy paste an address 😂
+```
+
+## 2026-10-30 22:06 MYT
+```
+HOT: CZ praises Bitcoin's resilience right after the Binance hack
+https://x.com/Cointelegraph/status/2116141997484302468
+@Cointelegraph (~2.9M followers) | 1.9h old | 32k views, 299 likes
+why: CZ is out talking up how well BTC held up vs stocks while his own exchange just lost $6.3b and withdrawals are still frozen (45 replies)
+
+suggested quote:
+CZ says bitcoin held up better than traditional markets today
+
+sure, but the reason it dumped in the first place is your exchange getting robbed for $6.3b
+
+ppl still can't withdraw from binance and he's out here doing the victory lap 🙄
+```
