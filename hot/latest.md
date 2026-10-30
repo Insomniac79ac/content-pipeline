@@ -59,3 +59,44 @@ good outcome this time, but it also means a handful of signers can freeze funds 
 
 ppl should remember that the next time someone calls an L2 decentralized
 ```
+
+## 2026-10-30 10:07 MYT
+```
+HOT: Binance says it will cover all losses from the hack
+https://x.com/WatcherGuru/status/2115966821350137971
+@WatcherGuru (~4.9M followers) | 1.5h old | 265k views, 4,439 likes
+why: biggest post on the TL right now and a fresh angle since your hack post, with Chainalysis putting the theft at ~$5.9B and Binance confirming ~$3B frozen
+
+suggested quote:
+.@binance says it will cover all losses from the hack
+
+good for users, but chainalysis has it at ~$5.9b stolen and only ~$3b frozen so far
+
+that's still a ~$3b hole to fill, even for binance
+```
+
+## 2026-10-30 10:07 MYT
+```
+HOT: Binance hacker dumps UNI, ENA, PEPE, LINK, AAVE and more for ~70k ETH
+https://x.com/lookonchain/status/2115972257864687976
+@lookonchain (~712k followers) | 1.1h old | 86k views, 447 likes
+why: explains part of why alts are bleeding harder than BTC today, and @lookonchain has since posted that the hacker finished dumping 217.5M ENA (~$34M)
+
+suggested quote:
+the binance hacker just dumped UNI, ENA, PEPE, LINK, AAVE and a few more into ~70k ETH
+
+if you're wondering why your alts are bleeding harder than BTC today, there's your answer
+```
+
+## 2026-10-30 10:07 MYT
+```
+HOT: Machi liquidated 8 times in 6 hours, down to $1.50
+https://x.com/lookonchain/status/2115974008969851294
+@lookonchain (~712k followers) | 1.0h old | 54k views, 382 likes
+why: a well-known whale getting wiped on Hyperliquid in the hack selloff, with 80 replies piling on, fits your fomo and revenge trading takes
+
+suggested quote:
+Machi got liquidated 8 times in 6 hours and woke up to $1.50 in his hyperliquid account 😅
+
+at some point you have to ask yourself why you keep going back in with leverage
+```
