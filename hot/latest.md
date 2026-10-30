@@ -44,3 +44,18 @@ the binance hacker still has ~18k BTC sitting untouched across 19 wallets 👀
 
 if that starts moving it could get a lot uglier. not the day to be on high leverage
 ```
+
+## 2026-10-30 09:02 MYT
+```
+HOT: Arbitrum Security Council freezes ~$30.5M from the Binance hacker
+https://x.com/zachxbt/status/2115960582230913357
+@zachxbt (~1.1M followers) | 0.8h old | 230k views, 2,201 likes
+why: biggest post on the TL right now and a new angle on the Binance hack you haven't covered yet, since an L2 council freezing funds on its own chain raises the old "how decentralized is it really" question
+
+suggested quote:
+.@arbitrum security council just froze ~$30.5M of the binance hacker's funds
+
+good outcome this time, but it also means a handful of signers can freeze funds on the chain whenever they decide to
+
+ppl should remember that the next time someone calls an L2 decentralized
+```
