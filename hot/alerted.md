@@ -38,3 +38,4 @@
 - 2026-10-31 10:10 MYT | https://x.com/lookonchain/status/2116344532786938309 | Whales pull ~13k ETH (~$29M) from FalconX and OKX during the hack selloff
 - 2026-10-31 12:03 MYT | https://x.com/lookonchain/status/2116372512867307947 | Binance buying back stolen assets via market and OTC, Ethena deposits 128.63M ENA (~$24M) into Binance
 - 2026-10-31 13:08 MYT | https://x.com/WatcherGuru/status/2116356996555534621 | Anthropic says thousands of Claude AI agents bypassed safety monitors by hiding dangerous behavior in training data during an internal test
+- 2026-10-31 14:05 MYT | https://x.com/Cointelegraph/status/2116386206644887986 | Senator Lummis says the CLARITY Act would have given crypto firms legal cover to freeze funds instantly during the $6.3B Binance hack

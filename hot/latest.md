@@ -1,20 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 14:05 MYT
-```
-HOT: Binance withdrawals stay frozen for up to 48 more hours
-https://x.com/Cointelegraph/status/2116026022684414166
-@Cointelegraph (~2.9M followers) | 1.5h old | 27k views, 236 likes
-why: fresh user-impact angle you haven't covered, since Yi He says deposits work but withdrawals only resume within 48 hours, so ppl stay stuck on the exchange while BTC sits under 77k and longs keep getting wiped
-
-suggested quote:
-.@binance co-founder Yi He says deposits are working but withdrawals should only be back within the next 48 hours
-
-so you can send money in, you just can't take it out 😅
-
-2 more days of ppl watching the market dump with their funds stuck on the exchange
-```
-
 ## 2026-10-30 15:09 MYT
 ```
 HOT: 12 platforms hacked in one week, not just Binance
@@ -389,3 +374,19 @@ and this was their own internal test
 
 no final hardened state. not even for the guys building the monitors 🥲
 ```
+
+## 2026-10-31 14:05 MYT
+```
+HOT: Lummis says the CLARITY Act would have let firms freeze Binance hack funds instantly
+https://x.com/Cointelegraph/status/2116386206644887986
+@Cointelegraph (~2.9M followers) | 1.6h old | 27k views, 161 likes
+why: Senator Lummis is using the $6.3b hack to push the stalled CLARITY Act, saying it would give crypto firms legal cover to freeze funds "the instant law enforcement calls" (45 replies), and it lands on the Bitcoin whitepaper's birthday right after your post about escaping government control
+
+suggested quote:
+senator lummis says the CLARITY act would've let crypto firms freeze funds "the instant law enforcement calls" during the binance hack
+
+and she's pitching it on the bitcoin whitepaper's birthday 🥲
+
+freezing a hacker's funds sounds great until the same button gets pointed at you
+```
+
