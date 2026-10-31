@@ -1,125 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 18:09 MYT
-```
-HOT: Trezor finds a suspected hardware implant from reseller CryptoBilis
-https://x.com/BitcoinNewsCom/status/2116077113614967092
-@BitcoinNewsCom (~265k followers) | 2.2h old | 20k views, 149 likes
-why: supply-chain tampering where ppl need to act, since anyone who bought a Trezor from CryptoBilis since March is told to move to a new wallet with a new seed, and @SlowMist_Team says it's the same reseller incident that hit the tampered Ledgers
-
-suggested quote:
-first the tampered ledgers, now trezor says a safe 5 sold by the same reseller CryptoBilis may have a hardware implant
-
-if you bought a hardware wallet from them since march, move to a new wallet with a new seed. don't reuse the old one
-
-buy direct from the maker. saving a few bucks with a random reseller can cost you everything
-```
-
-## 2026-10-30 18:09 MYT
-```
-HOT: $13.7M BTC short liquidated on the bounce
-https://x.com/lookonchain/status/2116069454203461891
-@lookonchain (~712k followers) | 2.7h old | 42k views, 162 likes
-why: the other side of the hack selloff, with ~$1.5B mostly longs wiped in 24h and now a 174.86 BTC short getting squeezed as BTC bounced back toward 78.5k (46 replies)
-
-suggested quote:
-longs got wiped all day yesterday so someone figured shorting the bottom was free money
-
-174 BTC (~$13.7M) short just got liquidated on the bounce
-
-leverage doesn't care which side you're on
-```
-
-## 2026-10-30 19:08 MYT
-```
-HOT: Malicious Claude Code extension hits up to 5,000 Cursor users
-https://x.com/Cointelegraph/status/2116115568440783154
-@Cointelegraph (~2.9M followers) | 0.7h old | 23k views, 39 likes
-why: supply-chain security alert where ppl may need to act, since Cursor says a fake Claude Code VS Code extension (not made by Anthropic) may have affected up to 5,000 users, and it's at 23k views in under 40 minutes
-
-suggested quote:
-cursor says a malicious claude code extension may have hit up to 5,000 users
-
-not made by anthropic, just someone riding the name
-
-if you installed a claude code extension recently, go check where it came from
-```
-
-## 2026-10-30 20:10 MYT
-```
-HOT: Binance brings in the FBI and US Secret Service
-https://x.com/WatcherGuru/status/2116130504273703358
-@WatcherGuru (~4.9M followers) | 0.7h old | 135k views, 1,327 likes
-why: new angle on the hack with US law enforcement now involved, while @DegenerateNews reports Chainalysis has "a high degree of confidence that DPRK is responsible" (181 replies already)
-
-suggested quote:
-.@binance is now working with the FBI and US Secret Service on the $6.3b hack
-
-if it's DPRK again like chainalysis thinks, good luck getting anything back from them
-
-my guess is the ~$3b already frozen is all that ever comes back
-```
-
-## 2026-10-30 20:10 MYT
-```
-HOT: Binance sets aside $6.34B of its own money to cover the hack
-https://x.com/WatcherGuru/status/2116125992020537776
-@WatcherGuru (~4.9M followers) | 1.0h old | 210k views, 2,409 likes
-why: puts real numbers on the "we'll cover all losses" promise from this morning, with $5B already held in the exact stolen tokens and the other $1.34B being bought on market and OTC, and it's the biggest post on the TL this hour
-
-suggested quote:
-.@binance just put aside $6.34b of company funds to cover the hack
-
-$5b was already sitting in the exact tokens that got stolen. the other $1.34b they're buying on market and OTC
-
-most exchanges would be FTX'd after a hole this size. binance just writes a check 👀
-```
-
-## 2026-10-30 21:03 MYT
-```
-HOT: Chainalysis sees never-before-seen laundering of the Binance hack
-https://x.com/coinbureau/status/2116134188390978036
-@coinbureau (~1.1M followers) | 1.3h old | 42k views, 359 likes
-why: new angle on the hack, since Chainalysis says the bot-like laundering patterns are something it has never seen before, with thousands of transactions circling between wallets in a short window (49 replies)
-
-suggested quote:
-chainalysis says the binance hack funds are being laundered in patterns they've never seen before
-
-thousands of txs in a short window, funds circling between wallets instead of moving in a straight line
-
-if it's DPRK, they've automated the laundering now. good luck to whoever has to trace this 🥲
-```
-
-## 2026-10-30 21:03 MYT
-```
-HOT: Synthetix recovers the SNX stolen in the Binance hack
-https://x.com/DegenerateNews/status/2116132543967699128
-@DegenerateNews (~425k followers) | 1.4h old | 25k views, 184 likes
-why: a protocol actually clawing funds back from the hacker, with Synthetix saying "fuck kim jong un" and offering to return the SNX on request while Chainalysis points at DPRK (32 replies)
-
-suggested quote:
-.@synthetix recovered the SNX stolen in the binance hack and will send it back "on request"
-
-their statement literally says fuck kim jong un 😂
-
-more teams should move this fast instead of tweeting "we're monitoring the situation"
-```
-
-## 2026-10-30 21:03 MYT
-```
-HOT: Blockaid CEO says EIP-7702 helped the Binance attackers
-https://x.com/Cointelegraph/status/2116134422961398257
-@Cointelegraph (~2.9M followers) | 1.3h old | 27k views, 63 likes
-why: fresh technical security angle you haven't covered, since @blockaid_ CEO Ido Ben-Natan says EIP-7702 didn't cause the hack but may have let attackers bypass security checks and drain funds in one sweep (34 replies)
-
-suggested quote:
-blockaid's CEO says EIP-7702 didn't cause the binance hack but may have helped the attackers skip security checks and drain everything in one sweep
-
-features that make wallets more convenient also make draining them more convenient
-
-no final hardened state. every upgrade is new attack surface
-```
-
 ## 2026-10-30 22:06 MYT
 ```
 HOT: Binance hacker fat-fingers $3.32M into the NEWT contract
@@ -388,4 +268,19 @@ elon trolls CZ in the middle of a $6.3b hack and CZ replies by calling him "one 
 binance users still can't withdraw and the two of them are busy doing PR
 
 fighting dprk sounds nice. turning withdrawals back on would be a better start
+```
+
+## 2026-10-31 21:05 MYT
+```
+HOT: Coinbase Bitcoin premium negative for 38 days straight
+https://x.com/Cointelegraph/status/2116507559838282191
+@Cointelegraph (~2.9M followers) | 0.6h old | 23k views, 65 likes
+why: US spot demand is still missing during the hack selloff, with the Coinbase premium at -0.2434% after 38 negative days, and replies are climbing fast (46 in ~35 min)
+
+suggested quote:
+the coinbase bitcoin premium has been negative for 38 days straight
+
+US buyers just aren't showing up, and a $6.3b binance hack plus $643M of ETF outflows won't bring them back
+
+my guess is no real bounce until they do
 ```
