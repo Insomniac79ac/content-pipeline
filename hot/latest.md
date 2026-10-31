@@ -1,63 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 11:05 MYT
-```
-HOT: Binance says the $6.3B hack started with a compromised DevOps laptop
-https://x.com/Cointelegraph/status/2115995681433264481
-@Cointelegraph (~2.9M followers) | 0.5h old | 24k views, 150 likes
-why: first word from Binance on how it happened, and it's a security angle you haven't covered yet (one engineer's laptop, no private key leak), with @WatcherGuru's "$6.3B impacted" post at 75k views in 15 minutes
-
-suggested quote:
-.@binance says the $6.3b hack likely started with a compromised DevOps engineer's laptop
-
-one laptop had enough access to drain the hot wallets. how tf does that happen at the biggest exchange in the world?
-
-there's no final hardened state. every other exchange should be checking who has that kind of access right now
-```
-
-## 2026-10-30 12:02 MYT
-```
-HOT: Logan Paul calls crypto a scam after the Binance hack
-https://x.com/DegenerateNews/status/2115980968389378525
-@DegenerateNews (~425k followers) | 2.4h old | 41k views, 215 likes
-why: clear villain for your accountability lane, since the CryptoZoo guy is now telling his audience crypto is a scam, with 64 replies and 20 quotes piling on
-
-suggested quote:
-the guy who sold ppl CryptoZoo eggs is now on stream telling everyone crypto is a scam 😂
-
-he'd know i guess
-```
-
-## 2026-10-30 12:02 MYT
-```
-HOT: Elon Musk says AI agents will hack financial systems for themselves
-https://x.com/WatcherGuru/status/2116008167716839712
-@WatcherGuru (~4.9M followers) | 0.6h old | 146k views, 1,832 likes
-why: fastest-moving post on the TL right now (213 replies in ~35 min), and @Cointelegraph frames it as Elon comparing it to the Binance hacker, which gives you a security angle off a huge post
-
-suggested quote:
-elon is worried about super intelligent AI agents hacking financial systems one day
-
-meanwhile binance says the biggest hack ever likely started with one engineer's laptop
-
-you don't need super intelligence when humans are this sloppy
-```
-
-## 2026-10-30 12:02 MYT
-```
-HOT: OKX CEO calls the Binance hack a wake-up call for exchanges
-https://x.com/Cointelegraph/status/2115990635068916013
-@Cointelegraph (~2.9M followers) | 1.8h old | 30k views, 324 likes
-why: a rival CEO weighing in on the hack with "security is everyone's responsibility", which is an easy opening for your "no final hardened state" take
-
-suggested quote:
-.@okx CEO wants exchange CEOs to unite on shared security standards after the binance hack
-
-nice words, but i'd rather see each of them publish how many ppl can actually move funds out of their hot wallets
-
-my guess is nobody volunteers first
-```
-
 ## 2026-10-30 13:05 MYT
 ```
 HOT: ZachXBT ties the Binance hack to the Bitget exploit
@@ -446,4 +388,19 @@ whales are quietly scooping ETH while everyone's still panicking about the binan
 ~13k ETH (~$29M) pulled out of FalconX and OKX in the last few hours
 
 my guess is they know something, but i'm still not convinced the bottom is in with midterms next week
+```
+
+## 2026-10-31 12:03 MYT
+```
+HOT: Binance buying back the stolen tokens, Ethena sends in $24M of ENA
+https://x.com/lookonchain/status/2116372512867307947
+@lookonchain (~712k followers) | 0.5h old | 25k views, 132 likes
+why: new angle on how Binance is refilling the $6.3b hole, with Lookonchain showing it buying back stolen assets through market and OTC deals and @ethena depositing 128.63M ENA (~$24M) into Binance over 8 hours (30 replies in ~30 min)
+
+suggested quote:
+.@ethena just sent ~$24M of ENA into binance in the last 8 hours
+
+binance is buying back the stolen tokens through market and OTC deals so users don't eat the loss
+
+nice that teams line up to help binance refill the hole. nobody does that for the protocols that got drained this year 🥲
 ```

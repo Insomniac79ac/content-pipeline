@@ -36,3 +36,4 @@
 - 2026-10-31 08:07 MYT | https://x.com/Cointelegraph/status/2116311862799217022 | Binance says phased withdrawals could resume in about 34 hours, new Proof of Reserves due Monday
 - 2026-10-31 09:06 MYT | https://x.com/DarkWebInformer/status/2116304098228068572 | Actor claims a 7GB shard of Anthropic model weights leaked from a misconfigured AWS S3 bucket tied to Amazon Bedrock
 - 2026-10-31 10:10 MYT | https://x.com/lookonchain/status/2116344532786938309 | Whales pull ~13k ETH (~$29M) from FalconX and OKX during the hack selloff
+- 2026-10-31 12:03 MYT | https://x.com/lookonchain/status/2116372512867307947 | Binance buying back stolen assets via market and OTC, Ethena deposits 128.63M ENA (~$24M) into Binance
