@@ -1,20 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 23:06 MYT
-```
-HOT: 322 crypto hacks in 2026, double last year
-https://x.com/Cointelegraph/status/2116153500086211050
-@Cointelegraph (~2.9M followers) | 2.1h old | 29k views, 75 likes
-why: zooms out from the Binance hack to the whole year, with DefiLlama counting 322 confirmed hacks so far in 2026, more than twice all of last year with two months still left (55 replies), and it lines up with your pen-testing replies tonight
-
-suggested quote:
-322 confirmed hacks in 2026 and we still have two months to go
-
-that's more than double all of last year, per @DefiLlama
-
-and most teams still think one audit before launch is enough 🥲
-```
-
 ## 2026-10-31 00:09 MYT
 ```
 HOT: US Secret Service and Circle move to freeze the Binance hack funds
@@ -329,4 +314,19 @@ more ETH got staked in october than any other month in ethereum's history
 the same month we had a $6.3b binance hack and ETH falling under $2,200
 
 ppl who stake aren't panicking. the ones on leverage are
+```
+
+## 2026-11-01 00:03 MYT
+```
+HOT: Binance SAFU Fund moves 7,500 BTC (~$581M) to a new wallet
+https://x.com/lookonchain/status/2116558971352027299
+@lookonchain (~712k followers) | 0.2h old | 22k views, 89 likes
+why: fresh onchain move from the hack's emergency fund, about an hour after Binance said 90% of the $6.3b losses are refilled, and it already passed 22k views within ~10 min
+
+suggested quote:
+binance's SAFU fund just moved 7,500 BTC, about $581M, to a fresh wallet
+
+this lands right after they said 90% of the hack losses are refilled
+
+my guess is SAFU is paying for the rest of the hole. would be nice if they just said so 👀
 ```

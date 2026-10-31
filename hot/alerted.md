@@ -48,3 +48,4 @@
 - 2026-10-31 22:08 MYT | https://x.com/Cointelegraph/status/2116511415251218927 | ICE plans Hyperliquid-based perps for US retail via Trade[XYZ] after asking regulators to rein in Hyperliquid
 - 2026-10-31 23:04 MYT | https://x.com/Cointelegraph/status/2116543088961196481 | Nasdaq-listed Next Technology greenlights selling or pledging all 5,833 BTC (~$450M), citing the Binance hack and quantum risk
 - 2026-10-31 23:04 MYT | https://x.com/Cointelegraph/status/2116538359728205898 | More ETH sat in staking in October than in any other month in Ethereum's history
+- 2026-11-01 00:03 MYT | https://x.com/lookonchain/status/2116558971352027299 | Binance SAFU Fund transfers 7,500 BTC (~$580.88M) to a new wallet after saying 90% of hack losses are replenished
