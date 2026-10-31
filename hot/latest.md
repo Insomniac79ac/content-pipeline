@@ -1,35 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 08:09 MYT
-```
-HOT: Bitcoin falls under $78k after the Binance hack
-https://x.com/WatcherGuru/status/2115954018954702942
-@WatcherGuru (~4.9M followers) | 0.4h old | 82k views, 634 likes
-why: BTC is the market story now, with liquidations over $1.1B in 24h (per @coinbureau) and the Binance hacker still holding ~18k BTC unsold (per @solidintel_x)
-
-suggested quote:
-BTC just lost 78k and longs are getting wiped again
-
-the binance hacker still has ~18k BTC sitting untouched across 19 wallets 👀
-
-if that starts moving it could get a lot uglier. not the day to be on high leverage
-```
-
-## 2026-10-30 09:02 MYT
-```
-HOT: Arbitrum Security Council freezes ~$30.5M from the Binance hacker
-https://x.com/zachxbt/status/2115960582230913357
-@zachxbt (~1.1M followers) | 0.8h old | 230k views, 2,201 likes
-why: biggest post on the TL right now and a new angle on the Binance hack you haven't covered yet, since an L2 council freezing funds on its own chain raises the old "how decentralized is it really" question
-
-suggested quote:
-.@arbitrum security council just froze ~$30.5M of the binance hacker's funds
-
-good outcome this time, but it also means a handful of signers can freeze funds on the chain whenever they decide to
-
-ppl should remember that the next time someone calls an L2 decentralized
-```
-
 ## 2026-10-30 10:07 MYT
 ```
 HOT: Binance says it will cover all losses from the hack
@@ -487,4 +457,19 @@ binance says phased withdrawals could start in about 34 hours, with fresh proof 
 that's 3+ days of ppl not being able to touch their own funds
 
 not your keys, not your coins. still true in 2026
+```
+
+## 2026-10-31 09:06 MYT
+```
+HOT: Anthropic model weights allegedly leaked from an open S3 bucket
+https://x.com/DarkWebInformer/status/2116304098228068572
+@DarkWebInformer (~257k followers) | 2.2h old | 71k views, 1,069 likes
+why: an actor called "localizer" claims a 7GB shard of Anthropic's alleged "Claude Fable 5" weights came out of a misconfigured S3 bucket tied to Amazon Bedrock, biggest security post in your lanes this hour with 482 bookmarks
+
+suggested quote:
+someone claims they pulled a 7GB shard of anthropic's model weights out of a misconfigured S3 bucket tied to amazon bedrock
+
+still alleged, but if it's real that's the most expensive bucket misconfig ever
+
+billions spent on AI safety and it might come down to one public bucket 🥲
 ```

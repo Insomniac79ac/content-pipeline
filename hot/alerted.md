@@ -34,3 +34,4 @@
 - 2026-10-31 08:07 MYT | https://x.com/WatcherGuru/status/2116279774079599086 | North Korea says international sanctions do not work, a day after the $6.3B Binance hack
 - 2026-10-31 08:07 MYT | https://x.com/Cointelegraph/status/2116296758992970015 | Recall Foundation winds down, burns ~35.86% of RECALL supply with no payouts to token holders
 - 2026-10-31 08:07 MYT | https://x.com/Cointelegraph/status/2116311862799217022 | Binance says phased withdrawals could resume in about 34 hours, new Proof of Reserves due Monday
+- 2026-10-31 09:06 MYT | https://x.com/DarkWebInformer/status/2116304098228068572 | Actor claims a 7GB shard of Anthropic model weights leaked from a misconfigured AWS S3 bucket tied to Amazon Bedrock
