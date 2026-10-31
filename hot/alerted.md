@@ -41,3 +41,4 @@
 - 2026-10-31 14:05 MYT | https://x.com/Cointelegraph/status/2116386206644887986 | Senator Lummis says the CLARITY Act would have given crypto firms legal cover to freeze funds instantly during the $6.3B Binance hack
 - 2026-10-31 15:02 MYT | https://x.com/Cointelegraph/status/2116417564590919733 | Tokyo-listed Iole dumps all its BTC at a loss to fund AI
 - 2026-10-31 15:02 MYT | https://x.com/Cointelegraph/status/2116404960535380034 | October wipes $300B off the crypto market
+- 2026-10-31 18:08 MYT | https://x.com/WatcherGuru/status/2116469206837502461 | CZ says he has no interest in fighting Elon Musk after Elon trolled him mid-hack, "let's fight the North Korean hackers"
