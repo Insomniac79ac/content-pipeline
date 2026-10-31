@@ -43,3 +43,6 @@
 - 2026-10-31 15:02 MYT | https://x.com/Cointelegraph/status/2116404960535380034 | October wipes $300B off the crypto market
 - 2026-10-31 18:08 MYT | https://x.com/WatcherGuru/status/2116469206837502461 | CZ says he has no interest in fighting Elon Musk after Elon trolled him mid-hack, "let's fight the North Korean hackers"
 - 2026-10-31 21:05 MYT | https://x.com/Cointelegraph/status/2116507559838282191 | Coinbase Bitcoin premium negative for 38 days straight, US buyers missing
+- 2026-10-31 22:08 MYT | https://x.com/WatcherGuru/status/2116523058022502841 | Bitcoin Halloween price list, 2026 at $77,400 vs $110,000 in 2025
+- 2026-10-31 22:08 MYT | https://x.com/Cointelegraph/status/2116523286410518832 | Chainalysis hit by a cybersecurity incident of its own, says unrelated to the Binance hack
+- 2026-10-31 22:08 MYT | https://x.com/Cointelegraph/status/2116511415251218927 | ICE plans Hyperliquid-based perps for US retail via Trade[XYZ] after asking regulators to rein in Hyperliquid

@@ -1,35 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-30 22:06 MYT
-```
-HOT: Binance hacker fat-fingers $3.32M into the NEWT contract
-https://x.com/lookonchain/status/2116159431679570229
-@lookonchain (~712k followers) | 0.7h old | 48k views, 241 likes
-why: the hacker sent ~$3.32M of stolen altcoins straight to the NEWT token contract by mistake, so those funds are gone for good, and it's pulling replies fast (67 in ~40 min)
-
-suggested quote:
-the binance hacker just sent ~$3.32M of stolen altcoins to the NEWT token contract by mistake
-
-funds are now unrecoverable lol
-
-stole $6.3b in 20 minutes and still can't copy paste an address 😂
-```
-
-## 2026-10-30 22:06 MYT
-```
-HOT: CZ praises Bitcoin's resilience right after the Binance hack
-https://x.com/Cointelegraph/status/2116141997484302468
-@Cointelegraph (~2.9M followers) | 1.9h old | 32k views, 299 likes
-why: CZ is out talking up how well BTC held up vs stocks while his own exchange just lost $6.3b and withdrawals are still frozen (45 replies)
-
-suggested quote:
-CZ says bitcoin held up better than traditional markets today
-
-sure, but the reason it dumped in the first place is your exchange getting robbed for $6.3b
-
-ppl still can't withdraw from binance and he's out here doing a victory lap
-```
-
 ## 2026-10-30 23:06 MYT
 ```
 HOT: 322 crypto hacks in 2026, double last year
@@ -283,4 +253,50 @@ the coinbase bitcoin premium has been negative for 38 days straight
 US buyers just aren't showing up, and a $6.3b binance hack plus $643M of ETF outflows won't bring them back
 
 my guess is no real bounce until they do
+```
+
+## 2026-10-31 22:08 MYT
+```
+HOT: Bitcoin on Halloween, lower than last year for the first time since 2022
+https://x.com/WatcherGuru/status/2116523058022502841
+@WatcherGuru (~4.9M followers) | 0.6h old | 120k views, 737 likes
+why: biggest crypto post on the TL right now (158 replies in ~40 min), a yearly Halloween price list where 2026 sits at $77,400 vs $110,000 last year, right as the hack selloff closes out October
+
+suggested quote:
+bitcoin on halloween 2025: $110k
+bitcoin on halloween 2026: $77.4k
+
+first time since 2022 it's lower than the year before 🥲
+
+my guess is ppl will still call this a bull market
+```
+
+## 2026-10-31 22:08 MYT
+```
+HOT: Chainalysis hit by its own cybersecurity incident
+https://x.com/Cointelegraph/status/2116523286410518832
+@Cointelegraph (~2.9M followers) | 0.6h old | 24k views, 66 likes
+why: the firm tracing the Binance hackers just got hit itself and says it's unrelated, and replies are climbing fast (46 in ~40 min)
+
+suggested quote:
+chainalysis, the firm tracking the binance hackers, just got hit by a security incident of its own
+
+they say it's unrelated. sure
+
+the guys tracing the hacks are getting hacked now. who's next 👀
+```
+
+## 2026-10-31 22:08 MYT
+```
+HOT: ICE wants to sell Hyperliquid perps after asking regulators to rein it in
+https://x.com/Cointelegraph/status/2116511415251218927
+@Cointelegraph (~2.9M followers) | 1.4h old | 25k views, 313 likes
+why: NYSE owner ICE asked US regulators to rein in Hyperliquid, now plans to bring Hyperliquid-based perps to US retail with Trade[XYZ], and ppl caught it deleting the first announcement (66 replies)
+
+suggested quote:
+ICE asked US regulators to rein in hyperliquid
+
+now it wants to sell hyperliquid perps to US retail, and deleted the first announcement after ppl noticed 😂
+
+can't beat them, so take the fees
 ```
