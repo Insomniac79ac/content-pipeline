@@ -390,3 +390,32 @@ and she's pitching it on the bitcoin whitepaper's birthday 🥲
 freezing a hacker's funds sounds great until the same button gets pointed at you
 ```
 
+## 2026-10-31 15:02 MYT
+```
+HOT: Tokyo-listed Iole dumps all its BTC at a loss to fund AI
+https://x.com/Cointelegraph/status/2116417564590919733
+@Cointelegraph (~2.9M followers) | 0.5h old | 19k views, 76 likes
+why: a treasury company capitulating mid-selloff, selling all 151.21 BTC by end of November at a ¥254M loss to fund AI data centers while keeping its HYPE, and replies are climbing fast (41 in ~30 min)
+
+suggested quote:
+a tokyo-listed company is selling all 151 of its BTC at a ¥254M loss to fund AI data centers
+
+but it's keeping its HYPE 😂
+
+treasury companies were supposed to be the diamond hands. my guess is this won't be the last one to fold
+```
+
+## 2026-10-31 15:02 MYT
+```
+HOT: October wipes $300B off the crypto market
+https://x.com/Cointelegraph/status/2116404960535380034
+@Cointelegraph (~2.9M followers) | 1.4h old | 26k views, 103 likes
+why: "what happened to Uptober?" is pulling a lot of replies (70) with the monthly candle closing at 8am MYT, on top of the $6.3b Binance hack and $643M of spot BTC ETF outflows yesterday
+
+suggested quote:
+october wiped $300B off the market
+
+uptober turned into a $6.3b binance hack and $643M of BTC ETF outflows in a single day
+
+monthly candle closes in a few hours. nobody's saying uptober next year lol
+```
