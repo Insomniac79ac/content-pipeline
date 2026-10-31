@@ -1,65 +1,5 @@
 # hot posts, last 24 hours (Grok Bot keeps this updated)
 
-## 2026-10-31 00:09 MYT
-```
-HOT: US Secret Service and Circle move to freeze the Binance hack funds
-https://x.com/WatcherGuru/status/2116195704335212981
-@WatcherGuru (~4.9M followers) | 0.3h old | 104k views, 1,264 likes
-why: new recovery angle on the $6.3b hack, with the Secret Service now working with Circle to identify, freeze and recover the stolen funds, and Cointelegraph saying ~$3B is already frozen (107 replies in 20 min)
-
-suggested quote:
-the US Secret Service is now working with .@circle to find and freeze the funds stolen from binance
-
-stablecoins are the easy part to claw back
-
-my guess is whatever already got swapped into BTC and ETH is gone for good
-```
-
-## 2026-10-31 00:09 MYT
-```
-HOT: Bitcoin Core discloses a bug that could let miners crash other nodes
-https://x.com/Cointelegraph/status/2116191103816749190
-@Cointelegraph (~2.9M followers) | 0.6h old | 23k views, 74 likes
-why: security angle on BTC itself while everyone is focused on Binance, since Bitcoin Core says a low-severity bug could let miners corrupt other nodes' undo data and trigger shutdowns under extreme conditions (28 replies)
-
-suggested quote:
-bitcoin core just disclosed a bug that could let miners corrupt other nodes' data and shut them down
-
-low severity and only under extreme conditions, but still
-
-no final hardened state. not even for bitcoin
-```
-
-## 2026-10-31 01:01 MYT
-```
-HOT: CZ calls the Binance hack a "major disaster for the industry"
-https://x.com/WatcherGuru/status/2116201629301248058
-@WatcherGuru (~4.9M followers) | 0.8h old | 142k views, 2,060 likes
-why: CZ's own words on the $6.3b hack, "it hurts, but we survive", and it's the biggest crypto post on the TL right now with 241 replies
-
-suggested quote:
-CZ calls the binance hack a "major disaster for the industry"
-
-no CZ, it was a disaster for YOUR exchange. the industry is just eating the selloff
-
-"it hurts, but we survive" hits different when ppl still can't withdraw
-```
-
-## 2026-10-31 01:01 MYT
-```
-HOT: Saylor says Binance will make customers whole
-https://x.com/Cointelegraph/status/2116194901427663048
-@Cointelegraph (~2.9M followers) | 1.3h old | 30k views, 260 likes
-why: Michael Saylor weighing in on the hack, saying he expects Binance to make customers whole after pledging its balance sheet and calling it a lesson for the industry (40 replies)
-
-suggested quote:
-Michael Saylor says he expects .@binance to make customers whole and calls the hack a lesson for the industry
-
-the lesson is one laptop got $6.3b out the door
-
-my guess is most teams will forget it by next month 🥲
-```
-
 ## 2026-10-31 08:07 MYT
 ```
 HOT: North Korea says sanctions don't work after the Binance hack
@@ -329,4 +269,34 @@ binance's SAFU fund just moved 7,500 BTC, about $581M, to a fresh wallet
 this lands right after they said 90% of the hack losses are refilled
 
 my guess is SAFU is paying for the rest of the hole. would be nice if they just said so 👀
+```
+
+## 2026-11-01 01:11 MYT
+```
+HOT: CZ walks back selling Binance's SpaceX shares
+https://x.com/Cointelegraph/status/2116568589863952590
+@Cointelegraph (~2.9M followers) | 0.7h old | 25k views, 132 likes
+why: CZ now says he never said Binance would sell its SpaceX shares and only mentioned them as proof of funds, right as Binance claims 90% of the $6.3b hole is refilled and withdrawals are due back today (41 replies in ~40 min)
+
+suggested quote:
+CZ now says he never said binance would sell its SpaceX shares, he only mentioned them as proof of funds
+
+so the shares were just there to calm ppl down 😂
+
+withdrawals are supposed to come back today. that's the only proof of funds that matters
+```
+
+## 2026-11-01 01:11 MYT
+```
+HOT: Scammers hiding phishing inside real Google security alerts
+https://x.com/coinbureau/status/2116577187906171167
+@coinbureau (~1.1M followers) | 0.1h old | 8k views, 18 likes
+why: security alert where users may need to act, scammers type their scam text into the name of a Google app password so Google itself sends a genuine signed alert that passes the usual fake-email checks, 8k views and 7 replies in ~5 min
+
+suggested quote:
+if you use gmail, the next "google security alert" you get might be a scam even tho it passes every check
+
+scammers type their scam text into the name of an app password so google sends a real, signed alert for them
+
+as a rule, i don't click links in emails, official domain or not. stay safe out there folks
 ```
