@@ -46,3 +46,5 @@
 - 2026-10-31 22:08 MYT | https://x.com/WatcherGuru/status/2116523058022502841 | Bitcoin Halloween price list, 2026 at $77,400 vs $110,000 in 2025
 - 2026-10-31 22:08 MYT | https://x.com/Cointelegraph/status/2116523286410518832 | Chainalysis hit by a cybersecurity incident of its own, says unrelated to the Binance hack
 - 2026-10-31 22:08 MYT | https://x.com/Cointelegraph/status/2116511415251218927 | ICE plans Hyperliquid-based perps for US retail via Trade[XYZ] after asking regulators to rein in Hyperliquid
+- 2026-10-31 23:04 MYT | https://x.com/Cointelegraph/status/2116543088961196481 | Nasdaq-listed Next Technology greenlights selling or pledging all 5,833 BTC (~$450M), citing the Binance hack and quantum risk
+- 2026-10-31 23:04 MYT | https://x.com/Cointelegraph/status/2116538359728205898 | More ETH sat in staking in October than in any other month in Ethereum's history

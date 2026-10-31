@@ -300,3 +300,33 @@ now it wants to sell hyperliquid perps to US retail, and deleted the first annou
 
 can't beat them, so take the fees
 ```
+
+## 2026-10-31 23:04 MYT
+```
+HOT: Next Technology may dump all 5,833 BTC over the Binance hack and quantum fears
+https://x.com/Cointelegraph/status/2116543088961196481
+@Cointelegraph (~2.9M followers) | 0.2h old | 17k views, 45 likes
+why: a second treasury company folding in one day, with Nasdaq-listed Next Technology's board greenlighting selling or pledging all 5,833 BTC (~$450M), and it's also on Coin Bureau (17k views, 37 replies) and Solid Intel within the hour
+
+suggested quote:
+nasdaq-listed next technology wants to sell or pledge all 5,833 of its BTC, about $450M
+
+their reasons are the binance hack and quantum computing 😂
+
+neither one has anything to do with bitcoin. my guess is they just need the cash
+```
+
+## 2026-10-31 23:04 MYT
+```
+HOT: Record amount of ETH staked in October
+https://x.com/Cointelegraph/status/2116538359728205898
+@Cointelegraph (~2.9M followers) | 0.6h old | 22k views, 83 likes
+why: ETH counter-signal at the end of a brutal month, with more ETH sitting in staking in October than in any month in Ethereum's history, and replies are climbing fast (36 in ~35 min)
+
+suggested quote:
+more ETH got staked in october than any other month in ethereum's history
+
+the same month we had a $6.3b binance hack and ETH falling under $2,200
+
+ppl who stake aren't panicking. the ones on leverage are
+```
