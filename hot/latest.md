@@ -443,3 +443,48 @@ the lesson is one laptop got $6.3b out the door
 
 my guess is most teams will forget it by next month 🥲
 ```
+
+## 2026-10-31 08:07 MYT
+```
+HOT: North Korea says sanctions don't work after the Binance hack
+https://x.com/WatcherGuru/status/2116279774079599086
+@WatcherGuru (~4.9M followers) | 2.7h old | 413k views, 4,823 likes
+why: DPRK publicly gloating one day after the $6.3b Binance heist, and it's the biggest crypto post on the TL by far (257 replies, 361 reposts)
+
+suggested quote:
+north korea just said international sanctions don't work, one day after robbing binance for $6.3b
+
+hard to argue when they keep proving it
+
+only thing that stops them is teams hacking their own shit before dprk does
+```
+
+## 2026-10-31 08:07 MYT
+```
+HOT: Recall Foundation winds down, holders get nothing
+https://x.com/Cointelegraph/status/2116296758992970015
+@Cointelegraph (~2.9M followers) | 1.6h old | 21k views, 31 likes
+why: a project going quiet on its holders, with the foundation winding down and burning ~358.6M RECALL (35.86% of supply) and "no payouts to token holders" (20 replies)
+
+suggested quote:
+recall foundation is winding down and burning ~36% of the supply with zero payouts to token holders
+
+raised money, sold the dream, and holders get nothing on the way out
+
+burning tokens doesn't fix that. it's just a nicer way of walking away
+```
+
+## 2026-10-31 08:07 MYT
+```
+HOT: Binance withdrawals could resume in ~34 hours
+https://x.com/Cointelegraph/status/2116311862799217022
+@Cointelegraph (~2.9M followers) | 0.6h old | 19k views, 78 likes
+why: first real timeline for ppl stuck on Binance since the hack, with phased withdrawals in about 34 hours and new Proof of Reserves on Monday, and replies are climbing fast (37 in ~35 min)
+
+suggested quote:
+binance says phased withdrawals could start in about 34 hours, with fresh proof of reserves on monday
+
+that's 3+ days of ppl not being able to touch their own funds
+
+not your keys, not your coins. still true in 2026
+```

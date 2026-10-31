@@ -31,3 +31,6 @@
 - 2026-10-31 00:09 MYT | https://x.com/Cointelegraph/status/2116191103816749190 | Bitcoin Core discloses a low-severity bug letting miners corrupt other nodes' undo data and trigger shutdowns
 - 2026-10-31 01:01 MYT | https://x.com/WatcherGuru/status/2116201629301248058 | CZ calls the $6.3B Binance hack a "major disaster for the industry", says "it hurts, but we survive"
 - 2026-10-31 01:01 MYT | https://x.com/Cointelegraph/status/2116194901427663048 | Michael Saylor says he expects Binance to make customers whole, calls it a lesson for the industry
+- 2026-10-31 08:07 MYT | https://x.com/WatcherGuru/status/2116279774079599086 | North Korea says international sanctions do not work, a day after the $6.3B Binance hack
+- 2026-10-31 08:07 MYT | https://x.com/Cointelegraph/status/2116296758992970015 | Recall Foundation winds down, burns ~35.86% of RECALL supply with no payouts to token holders
+- 2026-10-31 08:07 MYT | https://x.com/Cointelegraph/status/2116311862799217022 | Binance says phased withdrawals could resume in about 34 hours, new Proof of Reserves due Monday
