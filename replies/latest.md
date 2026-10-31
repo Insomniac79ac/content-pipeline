@@ -1,17 +1,17 @@
-# reply targets 2026-10-30 17:05 MYT
+# reply targets 2026-10-31 10:15 MYT
 
-1. security | @coinbureau (~1.1M) | 1.6h old | 40k views, 341 likes
-   https://x.com/coinbureau/status/2116070219730899172
-   Binance hacker sold $158.25M of alts (UNI, ENA, PEPE, LINK, AAVE) for 70,480 ETH | why: biggest fresh hot post, holders ate the dump, easy one-liner
-2. security | @lookonchain (~712k) | 1.5h old | 34k views, 184 likes
-   https://x.com/lookonchain/status/2116071971054334398
-   Binance, Bybit and Bitget hacks may all be Lazarus | why: same crew draining the biggest CEXs, pairs with his thorchain/dprk reply
-3. security | @WuBlockchain (~559k) | 2.2h old | 18k views, 64 likes
-   https://x.com/WuBlockchain/status/2116061415480111186
-   exploiter-linked wallet put ~60M USDT on Aave and borrowed 19,762 WETH, Aave froze V3/V4 markets | why: hacker swapping freezable stables into WETH; withdrawals and repays still work per Aave
-4. markets | @lookonchain (~712k) | 1.2h old | 34k views, 122 likes
-   https://x.com/lookonchain/status/2116076166188773626
-   whale closed 1,000 BTC + 10,000 ETH longs for $20M+ profit, flipped to 20x ETH short | why: fits his fomo/leverage takes, 42 replies and climbing
-5. security | @WuBlockchain (~559k) | 1.5h old | 41 likes, 20 replies
-   https://x.com/WuBlockchain/status/2116071063134330909
-   Trezor warns of suspected hardware implant in a Safe 5 from reseller CryptoBilis | why: he already posted the advisory, reply adds reach to it
+1. security | @DarkWebInformer (~257k) | 3h old | 116k views, 1,478 likes
+   https://x.com/DarkWebInformer/status/2116304098228068572
+   actor "localizer" claims a 7GB shard of alleged Anthropic weights from a misconfigured S3 bucket tied to Amazon Bedrock (unverified) | why: biggest fresh security post, AI lab vs "no final hardened state" angle; keep it "if true"
+2. markets / binance | @Cointelegraph (~2.9M) | 2.7h old | 28.8k views, 216 likes
+   https://x.com/Cointelegraph/status/2116311862799217022
+   Binance phased withdrawals could resume in ~34h, fresh Proof of Reserves Monday | why: ppl still locked out, replies climbing; he's been the Binance hack voice all week
+3. security / regulation | @WatcherGuru (~4.9M) | 5.7h old | 232k views, 3,633 likes
+   https://x.com/WatcherGuru/status/2116265700482576412
+   CFTC proposes security rules for crypto exchanges a day after the hack | why: rules won't stop dprk; fits his pen testing replies (OWASP sign-off isn't enough)
+4. security / politics | @WatcherGuru (~4.9M) | 6.1h old | 314k views, 5,926 likes
+   https://x.com/WatcherGuru/status/2116259589197107512
+   Trump says he's looking into the $6.3B Binance hack, "we don't know" if North Korea | why: big reach; TRM and Chainalysis already attribute it to DPRK with high confidence
+5. markets | @ByzGeneral (~243k) | 2.8h old | 11k views, 189 likes
+   https://x.com/ByzGeneral/status/2116309881422524422
+   BTC long liquidations ramping into a possible 74k sweep | why: fresh, BTC-only, ties to his "bottom is not in yet, midterms next week" reply
